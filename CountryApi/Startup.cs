@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CountryApi.Configuration;
 using CountryApi.Context;
+using CountryApi.Repositories;
+using CountryApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +33,9 @@ namespace CountryApi
             
             services.Configure<Connectionstrings>(Configuration.GetSection("ConnectionStrings"));
             services.AddDbContext<VisitContext>();
+            services.AddTransient<IVisitContext, VisitContext>();
+            services.AddTransient<ICountryRepository, CountryRepository>();
+            services.AddTransient<ICountryService, CountryService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

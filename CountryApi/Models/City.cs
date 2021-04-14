@@ -10,7 +10,6 @@ namespace CountryApi.Models
         public int Population { get; set; }
         [JsonIgnore]
         public Country Country { get; set; }
-        [JsonIgnore]
         public string CountryISOCode { get; set; }
     }
 }
