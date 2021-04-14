@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -14,5 +15,6 @@ namespace CountryApi.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
+        public List<UserCountry> VisitedCountries { get; set; }
     }
 }

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CountryApi.Configuration;
+using CountryApi.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,9 @@ namespace CountryApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            services.Configure<Connectionstrings>(Configuration.GetSection("ConnectionStrings"));
+            services.AddDbContext<VisitContext>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
