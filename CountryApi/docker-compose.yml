@@ -1,0 +1,40 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    # Haalt de image van de officiële provider (Docker image van de SQL server)
+    environment:
+      SA_PASSWORD: "<YourNewStrong@Passw0rd>"
+      # Dit is het wachtwoord dat de applicatie nodig heeft om te connecteren met de DB
+      ACCEPT_EULA: "Y"
+      # Dit is de licentie accepteren
+    ports: 
+      - 1433:1433
+      # SQl server draai default op 1433 en deze mappen we naar de host PC
+    volumes: 
+        - ./db/data:/var/opt/mssql/data
+      # Persistent volume want als we de container stoppen zijn we anders onze data kwijt
+      # Eerste deel is op onze host PC en het 2de deel is de mapping in de container, nu wordt dit gemapt naar de locatie db/data in de huidige directory
+  countryapi:
+    image: countryapi
+    build:
+      context: .
+      # De locatie om te bouwen
+      dockerfile: ./Dockerfile
+      # Wat er met genomen worden om te bouwen
+    environment: 
+      - ASPNETCORE_URLS=http://+:5000
+      - ASPNETCORE_ENVIRONMENT=Docker
+      # BELANGRIJK ==> dat zal de appsettings.Docker.json laden en gebruiken
+    ports:
+      - 5000:5000
+      - 5001:5000
+    depends_on: 
+      - db
+      # De API kan niet bestaan zonder de DB
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
+  
