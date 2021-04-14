@@ -20,9 +20,16 @@ namespace CountryApi.Controllers
 
         [HttpGet]
         [Route("countries")]
-        public async Task<ActionResult<List<Country>>> GetAllCountries(bool showCities = false)
+        public async Task<ActionResult<List<Country>>> GetAllCountries(bool cities = false)
         {
-            return await this._countryService.GetAllCountries(showCities);
+            return await this._countryService.GetAllCountries(cities);
+        }
+
+        [HttpPost]
+        [Route("country")]
+        public async Task<ActionResult<Country>> AddCountry(Country countryToAdd)
+        {
+            return await this._countryService.AddCountry(countryToAdd);
         }
 
         [HttpGet]

@@ -10,6 +10,7 @@ namespace CountryApi.Repositories
 {
     public interface ICountryRepository
     {
+        Task<Country> AddCountry(Country countryToAdd);
         Task<List<City>> GetAllCities(string countryToSearch);
         Task<List<Country>> GetAllCountries(bool showCities);
     }
@@ -25,25 +26,53 @@ namespace CountryApi.Repositories
 
         public async Task<List<Country>> GetAllCountries(bool showCities)
         {
-            if (showCities)
+            try
             {
-                return await this._context.Countries.Include(country => country.Cities).ToListAsync();
+                if (showCities == true)
+                {
+                    return await this._context.Countries.Include(country => country.Cities).ToListAsync();
+                }
+                else
+                {
+                    return await this._context.Countries.ToListAsync();
+                }
             }
-            else
+            catch (System.Exception)
             {
-                return await this._context.Countries.ToListAsync();
+                throw;
+            }
+        }
+
+        public async Task<Country> AddCountry(Country countryToAdd)
+        {
+            try
+            {
+                await this._context.Countries.AddAsync(countryToAdd);
+                await this._context.SaveChangesAsync();
+                return countryToAdd;
+            }
+            catch (System.Exception)
+            {
+                throw;
             }
         }
 
         public async Task<List<City>> GetAllCities(string countryToSearch)
         {
-            if (countryToSearch.Equals(""))
+            try
             {
-                return await this._context.Cities.ToListAsync();
+                if (countryToSearch.Equals(""))
+                {
+                    return await this._context.Cities.ToListAsync();
+                }
+                else
+                {
+                    return await this._context.Cities.Where(city => city.CountryISOCode.Equals(countryToSearch)).ToListAsync();
+                }
             }
-            else
+            catch (System.Exception)
             {
-                return await this._context.Cities.Where(city => city.CountryISOCode.Equals(countryToSearch)).ToListAsync();
+                throw;
             }
         }
     }

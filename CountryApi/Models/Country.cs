@@ -10,7 +10,7 @@ namespace CountryApi.Models
         [KeyAttribute]
         public string ISOCode { get; set; }
         public string Name { get; set; }
-        public List<City> Cities { get; set; }
         public int Population { get; set; }
+        public List<City> Cities { get; set; }
     }
 }

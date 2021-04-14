@@ -8,6 +8,7 @@ namespace CountryApi.Services
 {
     public interface ICountryService
     {
+        Task<Country> AddCountry(Country countryToAdd);
         Task<List<City>> GetAllCities(string countryToSearch);
         Task<List<Country>> GetAllCountries(bool showCities);
     }
@@ -29,6 +30,11 @@ namespace CountryApi.Services
         public async Task<List<City>> GetAllCities(string countryToSearch)
         {
             return await this._countryRepo.GetAllCities(countryToSearch);
+        }
+
+        public async Task<Country> AddCountry(Country countryToAdd)
+        {
+            return await this._countryRepo.AddCountry(countryToAdd);
         }
 
     }
