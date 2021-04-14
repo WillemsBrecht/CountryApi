@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "XGzav5y9Zdg9/vrnEqLvTk2iMeP1DrZN9rM4h2IIX6BsmXpQuTWznsCfBH2jv7yEEMcjF5gCPm6Py4Qle198Hg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\brech\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\brech\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\brech\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\brech\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\brech\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\brech\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
