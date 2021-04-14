@@ -1,3 +1,4 @@
+using System.Data.Common;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -40,8 +41,15 @@ namespace CountryApi.Services
 
         public async Task<City> AddCity(City cityToAdd)
         {
-            cityToAdd.CityId = Guid.NewGuid();
-            return await this._countryRepo.AddCity(cityToAdd);
+            if (this._countryRepo.CheckIfCityExists(cityToAdd) == false)
+            {
+                cityToAdd.CityId = Guid.NewGuid();
+                return await this._countryRepo.AddCity(cityToAdd);
+            }
+            else
+            {
+                return await this._countryRepo.GetCityByName(cityToAdd.Name, cityToAdd.CountryISOCode);
+            }
         }
 
     }

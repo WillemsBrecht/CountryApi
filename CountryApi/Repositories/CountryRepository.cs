@@ -12,8 +12,10 @@ namespace CountryApi.Repositories
     {
         Task<City> AddCity(City cityToAdd);
         Task<Country> AddCountry(Country countryToAdd);
+        bool CheckIfCityExists(City cityToCheck);
         Task<List<City>> GetAllCities(string countryToSearch);
         Task<List<Country>> GetAllCountries(bool showCities);
+        Task<City> GetCityByName(string cityName, string ISOCode);
     }
 
     public class CountryRepository : ICountryRepository
@@ -77,6 +79,18 @@ namespace CountryApi.Repositories
             }
         }
 
+        public async Task<City> GetCityByName(string cityName, string ISOCode)
+        {
+            try
+            {
+                return await this._context.Cities.Where(city => (city.Name == cityName) && (city.CountryISOCode == ISOCode)).SingleOrDefaultAsync();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<City> AddCity(City cityToAdd)
         {
             try
@@ -84,6 +98,25 @@ namespace CountryApi.Repositories
                 await this._context.Cities.AddAsync(cityToAdd);
                 await this._context.SaveChangesAsync();
                 return cityToAdd;
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool CheckIfCityExists(City cityToCheck)
+        {
+            try
+            {
+                if (this._context.Cities.Where(city => (city.Name == cityToCheck.Name) && (city.CountryISOCode == cityToCheck.CountryISOCode)).Any())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (System.Exception)
             {
