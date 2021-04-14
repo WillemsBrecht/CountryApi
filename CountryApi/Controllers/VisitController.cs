@@ -38,5 +38,12 @@ namespace CountryApi.Controllers
         {
             return await this._countryService.GetAllCities(country);
         }
+
+        [HttpPost]
+        [Route("city")]
+        public async Task<ActionResult<City>> AddCity(City cityToAdd)
+        {
+            return await this._countryService.AddCity(cityToAdd);
+        }
     }
 }

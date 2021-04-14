@@ -8,6 +8,7 @@ namespace CountryApi.Services
 {
     public interface ICountryService
     {
+        Task<City> AddCity(City cityToAdd);
         Task<Country> AddCountry(Country countryToAdd);
         Task<List<City>> GetAllCities(string countryToSearch);
         Task<List<Country>> GetAllCountries(bool showCities);
@@ -35,6 +36,12 @@ namespace CountryApi.Services
         public async Task<Country> AddCountry(Country countryToAdd)
         {
             return await this._countryRepo.AddCountry(countryToAdd);
+        }
+
+        public async Task<City> AddCity(City cityToAdd)
+        {
+            cityToAdd.CityId = Guid.NewGuid();
+            return await this._countryRepo.AddCity(cityToAdd);
         }
 
     }

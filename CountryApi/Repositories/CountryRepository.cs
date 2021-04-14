@@ -10,6 +10,7 @@ namespace CountryApi.Repositories
 {
     public interface ICountryRepository
     {
+        Task<City> AddCity(City cityToAdd);
         Task<Country> AddCountry(Country countryToAdd);
         Task<List<City>> GetAllCities(string countryToSearch);
         Task<List<Country>> GetAllCountries(bool showCities);
@@ -69,6 +70,20 @@ namespace CountryApi.Repositories
                 {
                     return await this._context.Cities.Where(city => city.CountryISOCode.Equals(countryToSearch)).ToListAsync();
                 }
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<City> AddCity(City cityToAdd)
+        {
+            try
+            {
+                await this._context.Cities.AddAsync(cityToAdd);
+                await this._context.SaveChangesAsync();
+                return cityToAdd;
             }
             catch (System.Exception)
             {
