@@ -12,10 +12,12 @@ namespace CountryApi.Repositories
     {
         Task<City> AddCity(City cityToAdd);
         Task<Country> AddCountry(Country countryToAdd);
-        bool CheckIfCityExists(City cityToCheck);
+        Task<bool> CheckIfCityExists(City cityToCheck);
+        Task<bool> CheckIfCountryExists(Country countrytoCheck);
         Task<List<City>> GetAllCities(string countryToSearch);
         Task<List<Country>> GetAllCountries(bool showCities);
         Task<City> GetCityByName(string cityName, string ISOCode);
+        Task<Country> GetCountryByISOCode(string ISOCode);
     }
 
     public class CountryRepository : ICountryRepository
@@ -105,18 +107,35 @@ namespace CountryApi.Repositories
             }
         }
 
-        public bool CheckIfCityExists(City cityToCheck)
+        public async Task<bool> CheckIfCityExists(City cityToCheck)
         {
             try
             {
-                if (this._context.Cities.Where(city => (city.Name == cityToCheck.Name) && (city.CountryISOCode == cityToCheck.CountryISOCode)).Any())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return await this._context.Cities.Where(city => (city.Name == cityToCheck.Name) && (city.CountryISOCode == cityToCheck.CountryISOCode)).AnyAsync();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<bool> CheckIfCountryExists(Country countrytoCheck)
+        {
+            try
+            {
+                return await this._context.Countries.Where(country => (country.ISOCode == countrytoCheck.ISOCode)).AnyAsync();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<Country> GetCountryByISOCode(string ISOCode)
+        {
+            try
+            {
+                return await this._context.Countries.Where(country => country.ISOCode == ISOCode).SingleOrDefaultAsync();
             }
             catch (System.Exception)
             {

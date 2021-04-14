@@ -36,12 +36,19 @@ namespace CountryApi.Services
 
         public async Task<Country> AddCountry(Country countryToAdd)
         {
-            return await this._countryRepo.AddCountry(countryToAdd);
+            if (await this._countryRepo.CheckIfCountryExists(countryToAdd) == false)
+            {
+                return await this._countryRepo.AddCountry(countryToAdd);
+            }
+            else
+            {
+                return await this._countryRepo.GetCountryByISOCode(countryToAdd.ISOCode);
+            }
         }
 
         public async Task<City> AddCity(City cityToAdd)
         {
-            if (this._countryRepo.CheckIfCityExists(cityToAdd) == false)
+            if (await this._countryRepo.CheckIfCityExists(cityToAdd) == false)
             {
                 cityToAdd.CityId = Guid.NewGuid();
                 return await this._countryRepo.AddCity(cityToAdd);
