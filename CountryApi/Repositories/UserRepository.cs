@@ -11,8 +11,10 @@ namespace CountryApi.Repositories
     public interface IUserRepository
     {
         Task<User> AddUser(User userToAdd);
+        Task<string> addUserVisit(User selectedUser, Country countryToAdd);
         Task<List<User>> GetAllUsers();
-        Task<User> GetUserByUsername(string userName, bool showCountries);
+        Task<List<User>> GetAllUsersThatVisitedCountry(string ISOCode);
+        Task<User> GetUserByUsername(string userName, bool showCountries = false);
     }
 
     public class UserRepository : IUserRepository
@@ -50,7 +52,7 @@ namespace CountryApi.Repositories
             }
         }
 
-        public async Task<User> GetUserByUsername(string userName, bool showCountries)
+        public async Task<User> GetUserByUsername(string userName, bool showCountries = false)
         {
             try
             {
@@ -67,6 +69,25 @@ namespace CountryApi.Repositories
             {
                 throw;
             }
+        }
+
+        public async Task<string> addUserVisit(User selectedUser, Country countryToAdd)
+        {
+            try
+            {
+                await this._context.UserCountries.AddAsync(new UserCountry() { UserId = selectedUser.UserId, ISOCode = countryToAdd.ISOCode });
+                await this._context.SaveChangesAsync();
+                return "Added country to user's visited list";
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<List<User>> GetAllUsersThatVisitedCountry(string ISOCode)
+        {
+            return await this._context.Users.Where(user => (user.Visited.Any(visited => visited.ISOCode.Equals(ISOCode)))).ToListAsync();
         }
     }
 }

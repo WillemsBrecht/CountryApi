@@ -68,5 +68,19 @@ namespace CountryApi.Controllers
         {
             return await this._userService.GetUserByUsername(username, countries);
         }
+
+        [HttpPost]
+        [Route("visit")]
+        public async Task<ActionResult<string>> AddCountryVisitToUser(string username, string ISOCode)
+        {
+            return await this._userService.addCountryVisitToUser(username, ISOCode);
+        }
+
+        [HttpGet]
+        [Route("visit")]
+        public async Task<ActionResult<List<User>>> GetAllUsersThatVisitedCountry(string country)
+        {
+            return await this._userService.GetAllUsersThatVisitedCountry(country);
+        }
     }
 }

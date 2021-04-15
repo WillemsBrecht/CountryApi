@@ -11,6 +11,7 @@ namespace CountryApi.Services
     {
         Task<City> AddCity(City cityToAdd);
         Task<Country> AddCountry(Country countryToAdd);
+        Task<bool> checkIfCountryExists(Country countryToCheck);
         Task<List<City>> GetAllCities(string countryToSearch);
         Task<List<Country>> GetAllCountries(bool showCities);
     }
@@ -59,5 +60,9 @@ namespace CountryApi.Services
             }
         }
 
+        public async Task<bool> checkIfCountryExists(Country countryToCheck)
+        {
+            return await this._countryRepo.CheckIfCountryExists(countryToCheck);
+        }
     }
 }
