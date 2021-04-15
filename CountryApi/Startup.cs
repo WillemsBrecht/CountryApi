@@ -36,6 +36,8 @@ namespace CountryApi
             services.AddTransient<IVisitContext, VisitContext>();
             services.AddTransient<ICountryRepository, CountryRepository>();
             services.AddTransient<ICountryService, CountryService>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserService, UserService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

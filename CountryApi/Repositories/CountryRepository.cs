@@ -26,7 +26,7 @@ namespace CountryApi.Repositories
 
         public CountryRepository(IVisitContext context)
         {
-            _context = context;
+            this._context = context;
         }
 
         public async Task<List<Country>> GetAllCountries(bool showCities)

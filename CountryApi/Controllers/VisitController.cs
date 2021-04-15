@@ -12,10 +12,12 @@ namespace CountryApi.Controllers
     public class VisitController: ControllerBase
     {  
         private readonly ICountryService _countryService;
+        private readonly IUserService _userService;
 
-        public VisitController(ICountryService countryService)
+        public VisitController(ICountryService countryService, IUserService userService)
         {
-            this._countryService = countryService;
+            _countryService = countryService;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -44,6 +46,27 @@ namespace CountryApi.Controllers
         public async Task<ActionResult<City>> AddCity(City cityToAdd)
         {
             return await this._countryService.AddCity(cityToAdd);
+        }
+
+        [HttpPost]
+        [Route("user")]
+        public async Task<ActionResult<User>> AddUser(User userToAdd)
+        {
+            return await this._userService.AddUser(userToAdd);
+        }
+
+        [HttpGet]
+        [Route("users")]
+        public async Task<ActionResult<List<User>>> GetAllUsers()
+        {
+            return await this._userService.GetAllUsers();
+        }
+
+        [HttpGet]
+        [Route("user")]
+        public async Task<ActionResult<User>> GetUserByUsername(string username, bool countries = false)
+        {
+            return await this._userService.GetUserByUsername(username, countries);
         }
     }
 }
