@@ -17,6 +17,6 @@ namespace CountryApi.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        public List<UserCountry> Visited { get; set; }
+        public List<UserCountry> VisitedCountries { get; set; }
     }
 }

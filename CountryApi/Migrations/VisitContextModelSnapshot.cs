@@ -43,140 +43,140 @@ namespace CountryApi.Migrations
                     b.HasData(
                         new
                         {
-                            CityId = new Guid("72c4d020-bbca-43b6-bab7-7adfa0872d1d"),
+                            CityId = new Guid("28b28b96-6233-4f0c-a19b-adacb9b22342"),
                             CountryISOCode = "LUX",
                             Name = "Luxembourg City",
                             Population = 114303
                         },
                         new
                         {
-                            CityId = new Guid("909c2ada-fb4f-474c-9a3b-da29f3181451"),
+                            CityId = new Guid("69e322ac-b6b0-40c0-bfc4-d91e085dbfd9"),
                             CountryISOCode = "LUX",
                             Name = "Echternach",
                             Population = 5614
                         },
                         new
                         {
-                            CityId = new Guid("d36477f1-bf29-4ffc-8311-6bfda69f5713"),
+                            CityId = new Guid("b496c2e5-ead9-4663-baa5-ad7b03f91b93"),
                             CountryISOCode = "BE",
                             Name = "Bruges",
                             Population = 118656
                         },
                         new
                         {
-                            CityId = new Guid("6358e80b-6b29-4c70-9f9c-4824a4c0e930"),
+                            CityId = new Guid("3352e80a-526b-4437-9085-6c7f2e11193d"),
                             CountryISOCode = "BE",
                             Name = "Ghent",
                             Population = 466000
                         },
                         new
                         {
-                            CityId = new Guid("59588509-0bf6-4ecf-8a6e-da654c18c195"),
+                            CityId = new Guid("89aaca47-e2ce-4501-aeec-a721dd7ecf2f"),
                             CountryISOCode = "BE",
                             Name = "Antwerp",
                             Population = 523248
                         },
                         new
                         {
-                            CityId = new Guid("5274a5d1-750f-425d-b4e8-ea729ef8d26b"),
+                            CityId = new Guid("a349ce6a-ed96-469c-bbab-e5bf2dda852e"),
                             CountryISOCode = "BE",
                             Name = "Brussels",
                             Population = 2081000
                         },
                         new
                         {
-                            CityId = new Guid("2ed4f14b-b22b-41f0-bfb5-66f2ebb2fe51"),
+                            CityId = new Guid("46e7c825-de9b-4427-a37f-261001370fdd"),
                             CountryISOCode = "BE",
                             Name = "Liège",
                             Population = 195965
                         },
                         new
                         {
-                            CityId = new Guid("ee085812-b199-4310-aa69-7023aac2974e"),
+                            CityId = new Guid("a4ed6caa-8573-417f-96fd-35a1c6ef77e6"),
                             CountryISOCode = "BE",
                             Name = "Tournai",
                             Population = 69083
                         },
                         new
                         {
-                            CityId = new Guid("76376c89-bc31-4969-b9fc-aa8748cf88e9"),
+                            CityId = new Guid("bf879fb7-495e-4dce-a366-045eb552d1fb"),
                             CountryISOCode = "FR",
                             Name = "Strasbourg",
                             Population = 272222
                         },
                         new
                         {
-                            CityId = new Guid("6b319435-7dce-4570-b750-b4155fb7668c"),
+                            CityId = new Guid("9fa9bb93-003f-4d41-8791-5bca90c1dc41"),
                             CountryISOCode = "FR",
                             Name = "Paris",
                             Population = 11017000
                         },
                         new
                         {
-                            CityId = new Guid("8c615d16-7f7c-4930-87a7-f7dd5a7147eb"),
+                            CityId = new Guid("ee1e18f7-8b7d-45f5-9c17-c23aafbc79a3"),
                             CountryISOCode = "FR",
                             Name = "Calais",
                             Population = 72929
                         },
                         new
                         {
-                            CityId = new Guid("ca2db91e-5faa-497a-842d-c1036100b446"),
+                            CityId = new Guid("413c3255-5122-4ed1-8833-6ae771265333"),
                             CountryISOCode = "FR",
                             Name = "Calais",
                             Population = 868277
                         },
                         new
                         {
-                            CityId = new Guid("72f0974f-eedc-412c-bfc2-d73533cfeb9f"),
+                            CityId = new Guid("dc559bc6-22f2-4f03-8573-c6a3d144b203"),
                             CountryISOCode = "FR",
                             Name = "Bordeaux",
                             Population = 257068
                         },
                         new
                         {
-                            CityId = new Guid("4eb101b3-368e-45bc-87bf-431e788f1a06"),
+                            CityId = new Guid("665115cc-b429-4946-a7d0-d37e0b8fce23"),
                             CountryISOCode = "NL",
                             Name = "Rotterdam",
                             Population = 651446
                         },
                         new
                         {
-                            CityId = new Guid("0ff39296-d6f9-47f4-880f-a24d881bf6e0"),
+                            CityId = new Guid("3e53b2fa-94e5-47db-95ac-489e2cb367e7"),
                             CountryISOCode = "NL",
                             Name = "Amsterdam",
                             Population = 1149000
                         },
                         new
                         {
-                            CityId = new Guid("5e770831-9666-4aac-9236-6f5dd3c9ac52"),
+                            CityId = new Guid("7be043a5-7c59-4ba1-ad62-23c183f9c154"),
                             CountryISOCode = "DE",
                             Name = "Berlin",
                             Population = 3562000
                         },
                         new
                         {
-                            CityId = new Guid("212a1825-3274-451b-912b-0820b621cb1b"),
+                            CityId = new Guid("bc05a63d-f02b-48fb-8b7a-da0b207eba7f"),
                             CountryISOCode = "DE",
                             Name = "Frankfurt",
                             Population = 777000
                         },
                         new
                         {
-                            CityId = new Guid("61bb07ff-b254-443f-a756-16fa4743756d"),
+                            CityId = new Guid("6cf5ad79-ca0f-4e03-8572-84500cb9bf89"),
                             CountryISOCode = "DE",
                             Name = "Hamburg",
                             Population = 1790000
                         },
                         new
                         {
-                            CityId = new Guid("b9ec61a4-ad94-4638-8f38-57880381fcfb"),
+                            CityId = new Guid("5fcea13c-1c67-4e2d-9642-17c9cea029be"),
                             CountryISOCode = "DE",
                             Name = "Munich",
                             Population = 1558395
                         },
                         new
                         {
-                            CityId = new Guid("5d6f107d-7eea-4d88-a276-a86b1d27f996"),
+                            CityId = new Guid("ff132038-0670-4cf3-8816-b3e774447213"),
                             CountryISOCode = "DE",
                             Name = "Trier",
                             Population = 111528
@@ -258,6 +258,19 @@ namespace CountryApi.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("CountryApi.Models.UserCity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CityId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserId", "CityId");
+
+                    b.ToTable("UserCities");
+                });
+
             modelBuilder.Entity("CountryApi.Models.UserCountry", b =>
                 {
                     b.Property<Guid>("UserId")
@@ -278,6 +291,17 @@ namespace CountryApi.Migrations
                         .HasForeignKey("CountryISOCode");
 
                     b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("CountryApi.Models.UserCity", b =>
+                {
+                    b.HasOne("CountryApi.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CountryApi.Models.UserCountry", b =>

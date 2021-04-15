@@ -30,11 +30,11 @@ namespace CountryApi.Services
         {
             userToAdd.UserId = Guid.NewGuid();
             List<UserCountry> countries = new List<UserCountry>();
-            foreach (var country in userToAdd.Visited)
+            foreach (var country in userToAdd.VisitedCountries)
             {
                 countries.Add(new UserCountry() { UserId = userToAdd.UserId, ISOCode = country.ISOCode });
             }
-            userToAdd.Visited = countries;
+            userToAdd.VisitedCountries = countries;
             return await this._userRepo.AddUser(userToAdd);
         }
 
@@ -57,7 +57,7 @@ namespace CountryApi.Services
                 return "User or country doesn't exist";
             }
 
-            foreach (var visited in userToCheck.Visited)
+            foreach (var visited in userToCheck.VisitedCountries)
             {
                 if (visited.ISOCode == ISOCode)
                 {

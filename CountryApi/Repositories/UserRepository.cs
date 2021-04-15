@@ -44,7 +44,7 @@ namespace CountryApi.Repositories
         {
             try
             {
-                return await this._context.Users.Include(country => country.Visited).ToListAsync();
+                return await this._context.Users.Include(country => country.VisitedCountries).ToListAsync();
             }
             catch (System.Exception)
             {
@@ -58,7 +58,7 @@ namespace CountryApi.Repositories
             {
                 if (showCountries)
                 {
-                    return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.Visited).SingleOrDefaultAsync();
+                    return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.VisitedCountries).SingleOrDefaultAsync();
                 }
                 else
                 {
@@ -87,7 +87,7 @@ namespace CountryApi.Repositories
 
         public async Task<List<User>> GetAllUsersThatVisitedCountry(string ISOCode)
         {
-            return await this._context.Users.Where(user => (user.Visited.Any(visited => visited.ISOCode.Equals(ISOCode)))).ToListAsync();
+            return await this._context.Users.Where(user => (user.VisitedCountries.Any(visited => visited.ISOCode.Equals(ISOCode)))).ToListAsync();
         }
     }
 }

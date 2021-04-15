@@ -16,6 +16,7 @@ namespace CountryApi.Context
         DbSet<Country> Countries { get; set; }
         DbSet<City> Cities { get; set; }
         DbSet<UserCountry> UserCountries { get; set; }
+        DbSet<UserCity> UserCities { get; set; }
         int SaveChanges();
         Task<int> SaveChangesAsync(CancellationToken token = default);
     }
@@ -26,6 +27,7 @@ namespace CountryApi.Context
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<UserCountry> UserCountries { get; set; }
+        public DbSet<UserCity> UserCities { get; set; }
 
         private Connectionstrings _connectionStrings;
 
@@ -43,6 +45,7 @@ namespace CountryApi.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<UserCountry>().HasKey(uc => new { uc.UserId, uc.ISOCode });
+            builder.Entity<UserCity>().HasKey(uc => new { uc.UserId, uc.CityId });
             builder.Entity<Country>().HasMany(country => country.Cities).WithOne(city => city.Country);
 
             builder.Entity<Country>().HasData(
