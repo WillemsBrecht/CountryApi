@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace CountryApi.Repositories
     public interface IUserRepository
     {
         Task<User> AddUser(User userToAdd);
-        Task<string> addUserVisit(User selectedUser, Country countryToAdd);
+        Task<string> AddUserVisitedCity(User selectedUser, City cityToAdd);
+        Task<string> AddUserVisitedCountry(User selectedUser, Country countryToAdd);
         Task<List<User>> GetAllUsers();
         Task<List<User>> GetAllUsersThatVisitedCountry(string ISOCode);
-        Task<User> GetUserByUsername(string userName, bool showCountries = false);
+        Task<User> GetUserByUsername(string userName, bool showCountries = false, bool showCities = false);
+        Task<User> UpdateUser(User userToUpdate);
     }
 
     public class UserRepository : IUserRepository
@@ -44,7 +47,7 @@ namespace CountryApi.Repositories
         {
             try
             {
-                return await this._context.Users.Include(country => country.VisitedCountries).ToListAsync();
+                return await this._context.Users.Include(country => country.VisitedCountries).Include(city => city.VisitedCities).ThenInclude(city => city.City).ToListAsync();
             }
             catch (System.Exception)
             {
@@ -52,18 +55,23 @@ namespace CountryApi.Repositories
             }
         }
 
-        public async Task<User> GetUserByUsername(string userName, bool showCountries = false)
+        public async Task<User> GetUserByUsername(string userName, bool showCountries = false, bool showCities = false)
         {
             try
             {
+                if (showCountries && showCities)
+                {
+                    return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.VisitedCountries).Include(user => user.VisitedCities).SingleOrDefaultAsync();
+                }
                 if (showCountries)
                 {
                     return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.VisitedCountries).SingleOrDefaultAsync();
                 }
-                else
+                if (showCities)
                 {
-                    return await this._context.Users.Where(user => user.UserName.Equals(userName)).SingleOrDefaultAsync();
+                    return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.VisitedCountries).Include(user => user.VisitedCities).SingleOrDefaultAsync();
                 }
+                return await this._context.Users.Where(user => user.UserName.Equals(userName)).SingleOrDefaultAsync();
             }
             catch (System.Exception)
             {
@@ -71,7 +79,7 @@ namespace CountryApi.Repositories
             }
         }
 
-        public async Task<string> addUserVisit(User selectedUser, Country countryToAdd)
+        public async Task<string> AddUserVisitedCountry(User selectedUser, Country countryToAdd)
         {
             try
             {
@@ -87,7 +95,49 @@ namespace CountryApi.Repositories
 
         public async Task<List<User>> GetAllUsersThatVisitedCountry(string ISOCode)
         {
-            return await this._context.Users.Where(user => (user.VisitedCountries.Any(visited => visited.ISOCode.Equals(ISOCode)))).ToListAsync();
+            try
+            {
+                return await this._context.Users.Where(user => (user.VisitedCountries.Any(visited => visited.ISOCode.Equals(ISOCode)))).ToListAsync();
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<string> AddUserVisitedCity(User selectedUser, City cityToAdd)
+        {
+            try
+            {
+                await this._context.UserCities.AddAsync(new UserCity() { UserId = selectedUser.UserId, CityId = cityToAdd.CityId });
+                await this._context.SaveChangesAsync();
+                return "Added city to user's visited list";
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<User> UpdateUser(User userToUpdate)
+        {
+            try
+            {
+                User user = this._context.Users.First(user => user.UserId == userToUpdate.UserId);
+                user.FirstName = userToUpdate.FirstName;
+                user.LastName = userToUpdate.LastName;
+                user.Mail = userToUpdate.Mail;
+                user.UserName = userToUpdate.UserName;
+                await this._context.SaveChangesAsync();
+                return await this.GetUserByUsername(userToUpdate.UserName);
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

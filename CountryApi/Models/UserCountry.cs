@@ -9,6 +9,6 @@ namespace CountryApi.Models
         public Guid UserId { get; set; }
         public string ISOCode { get; set; }
         [JsonIgnore]
-        public User User { get; set; }
+        public User Country { get; set; }
     }
 }

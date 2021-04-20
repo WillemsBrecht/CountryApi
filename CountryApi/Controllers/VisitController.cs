@@ -64,23 +64,36 @@ namespace CountryApi.Controllers
 
         [HttpGet]
         [Route("user")]
-        public async Task<ActionResult<User>> GetUserByUsername(string username, bool countries = false)
+        public async Task<ActionResult<User>> GetUserByUsername(string username, bool countries = false, bool cities = false)
         {
-            return await this._userService.GetUserByUsername(username, countries);
+            return await this._userService.GetUserByUsername(username, countries, cities);
+        }
+
+        [HttpPut]
+        [Route("user")]
+        public async Task<ActionResult<User>> UpdateUser(User userToUpdate){
+            return await this._userService.UpdateUser(userToUpdate);
         }
 
         [HttpPost]
-        [Route("visit")]
+        [Route("visit/country")]
         public async Task<ActionResult<string>> AddCountryVisitToUser(string username, string ISOCode)
         {
-            return await this._userService.addCountryVisitToUser(username, ISOCode);
+            return await this._userService.addUserVisitedCountry(username, ISOCode);
         }
 
         [HttpGet]
-        [Route("visit")]
+        [Route("visit/country")]
         public async Task<ActionResult<List<User>>> GetAllUsersThatVisitedCountry(string country)
         {
             return await this._userService.GetAllUsersThatVisitedCountry(country);
+        }
+
+        [HttpPost]
+        [Route("visit/city")]
+        public async Task<ActionResult<string>> AddCountryVisitToUser(string username, Guid cityId)
+        {
+            return await this._userService.addUserVisitedCity(username, cityId);
         }
     }
 }

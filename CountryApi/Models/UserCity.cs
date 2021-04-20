@@ -5,9 +5,10 @@ namespace CountryApi.Models
 {
     public class UserCity
     {
-        public Guid UserId { get; set; }
-        public Guid CityId { get; set; }
         [JsonIgnore]
-        public User User { get; set; }
+        public Guid UserId { get; set; }
+        [JsonIgnore]
+        public Guid CityId { get; set; }
+        public City City { get; set; }
     }
 }
