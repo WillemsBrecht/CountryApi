@@ -7,7 +7,6 @@ namespace CountryApi.Models
     {
         [JsonIgnore]
         public Guid UserId { get; set; }
-        [JsonIgnore]
         public Guid CityId { get; set; }
         public City City { get; set; }
     }

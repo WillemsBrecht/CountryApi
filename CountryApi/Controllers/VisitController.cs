@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using CountryApi.Models;
 using CountryApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CountryApi.Controllers
@@ -20,6 +21,7 @@ namespace CountryApi.Controllers
             _userService = userService;
         }
 
+        // [Authorize]
         [HttpGet]
         [Route("countries")]
         public async Task<ActionResult<List<Country>>> GetAllCountries(bool cities = false)
@@ -50,9 +52,14 @@ namespace CountryApi.Controllers
 
         [HttpPost]
         [Route("user")]
-        public async Task<ActionResult<User>> AddUser(User userToAdd)
+        public async Task<ActionResult> AddUser(User userToAdd)
         {
-            return await this._userService.AddUser(userToAdd);
+            User user = await this._userService.AddUser(userToAdd);
+            if (user.UserId == Guid.Parse("00000000-0000-0000-0000-000000000000"))
+            {
+                return new BadRequestObjectResult("User already exists");
+            }
+            return new OkObjectResult(user);
         }
 
         [HttpGet]
@@ -75,11 +82,27 @@ namespace CountryApi.Controllers
             return await this._userService.UpdateUser(userToUpdate);
         }
 
+        [HttpDelete]
+        [Route("user")]
+        public async Task<ActionResult<string>> DeletUser(Guid userId){
+            bool result = await this._userService.DeleteUser(userId);
+            if (result == false)
+            {
+                return new BadRequestObjectResult("No user was found");
+            }
+            return new OkObjectResult("User has been removed");
+        }
+
         [HttpPost]
         [Route("visit/country")]
         public async Task<ActionResult<string>> AddCountryVisitToUser(string username, string ISOCode)
         {
-            return await this._userService.addUserVisitedCountry(username, ISOCode);
+            Result result = await this._userService.addUserVisitedCountry(username, ISOCode);
+            if (result.Success == false)
+            {
+                return new BadRequestObjectResult(result.Message);
+            }
+            return new OkObjectResult(result.Message);
         }
 
         [HttpGet]
@@ -91,9 +114,14 @@ namespace CountryApi.Controllers
 
         [HttpPost]
         [Route("visit/city")]
-        public async Task<ActionResult<string>> AddCountryVisitToUser(string username, Guid cityId)
+        public async Task<ActionResult<string>> AddCityVisitToUser(string username, Guid cityId)
         {
-            return await this._userService.addUserVisitedCity(username, cityId);
+            Result result = await this._userService.addUserVisitedCity(username, cityId);
+            if (result.Success == false)
+            {
+                return new BadRequestObjectResult(result.Message);
+            }
+            return new OkObjectResult(result.Message);
         }
     }
 }

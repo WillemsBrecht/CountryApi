@@ -13,6 +13,7 @@ namespace CountryApi.Repositories
         Task<City> AddCity(City cityToAdd);
         Task<bool> CheckIfCityExists(City cityToCheck);
         Task<List<City>> GetAllCities(string countryToSearch);
+        Task<City> GetCityById(Guid cityId);
         Task<City> GetCityByName(string cityName, string ISOCode);
     }
 
@@ -49,6 +50,19 @@ namespace CountryApi.Repositories
             try
             {
                 return await this._context.Cities.Where(city => (city.Name == cityName) && (city.CountryISOCode == ISOCode)).SingleOrDefaultAsync();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+
+        public async Task<City> GetCityById(Guid cityId)
+        {
+            try
+            {
+                return await this._context.Cities.Where(city => city.CityId == cityId).SingleOrDefaultAsync();
             }
             catch (System.Exception)
             {

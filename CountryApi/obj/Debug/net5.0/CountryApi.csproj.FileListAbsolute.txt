@@ -23,7 +23,6 @@ C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bi
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -60,3 +59,4 @@ C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\ob
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\obj\Debug\net5.0\ref\CountryApi.dll
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\obj\Debug\net5.0\CountryApi.pdb
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\obj\Debug\net5.0\CountryApi.genruntimeconfig.cache
+C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

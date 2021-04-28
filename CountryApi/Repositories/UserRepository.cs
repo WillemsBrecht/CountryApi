@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CountryApi.Context;
 using CountryApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CountryApi.Repositories
 {
@@ -14,9 +15,12 @@ namespace CountryApi.Repositories
         Task<User> AddUser(User userToAdd);
         Task<string> AddUserVisitedCity(User selectedUser, City cityToAdd);
         Task<string> AddUserVisitedCountry(User selectedUser, Country countryToAdd);
+        Task<bool> CheckIfUserExists(User userToCheck);
+        Task<bool> DeleteUser(User userToRemove);
         Task<List<User>> GetAllUsers();
         Task<List<User>> GetAllUsersThatVisitedCountry(string ISOCode);
-        Task<User> GetUserByUsername(string userName, bool showCountries = false, bool showCities = false);
+        Task<User> GetUserById(Guid userIdToCheck);
+        Task<User> GetUserByUsername(string userName, bool showCountries, bool showCities);
         Task<User> UpdateUser(User userToUpdate);
     }
 
@@ -27,6 +31,11 @@ namespace CountryApi.Repositories
         public UserRepository(IVisitContext context)
         {
             this._context = context;
+        }
+
+        public async Task<bool> CheckIfUserExists(User userToCheck)
+        {
+            return await this._context.Users.Where(user => userToCheck.UserName == user.UserName || userToCheck.Mail == user.Mail).AnyAsync();
         }
 
         public async Task<User> AddUser(User userToAdd)
@@ -55,21 +64,21 @@ namespace CountryApi.Repositories
             }
         }
 
-        public async Task<User> GetUserByUsername(string userName, bool showCountries = false, bool showCities = false)
+        public async Task<User> GetUserByUsername(string userName, bool showCountries, bool showCities)
         {
             try
             {
                 if (showCountries && showCities)
                 {
-                    return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.VisitedCountries).Include(user => user.VisitedCities).SingleOrDefaultAsync();
+                    return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.VisitedCountries).Include(user => user.VisitedCities).ThenInclude(city => city.City).SingleOrDefaultAsync();
                 }
-                if (showCountries)
+                if (showCountries && showCities == false)
                 {
                     return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.VisitedCountries).SingleOrDefaultAsync();
                 }
-                if (showCities)
+                if (showCities && showCountries == false)
                 {
-                    return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.VisitedCountries).Include(user => user.VisitedCities).SingleOrDefaultAsync();
+                    return await this._context.Users.Where(user => user.UserName.Equals(userName)).Include(user => user.VisitedCities).ThenInclude(city => city.City).SingleOrDefaultAsync();
                 }
                 return await this._context.Users.Where(user => user.UserName.Equals(userName)).SingleOrDefaultAsync();
             }
@@ -129,13 +138,38 @@ namespace CountryApi.Repositories
                 user.FirstName = userToUpdate.FirstName;
                 user.LastName = userToUpdate.LastName;
                 user.Mail = userToUpdate.Mail;
-                user.UserName = userToUpdate.UserName;
                 await this._context.SaveChangesAsync();
-                return await this.GetUserByUsername(userToUpdate.UserName);
+                return await this.GetUserByUsername(userToUpdate.UserName, false, false);
             }
             catch (System.Exception)
             {
 
+                throw;
+            }
+        }
+
+        public async Task<User> GetUserById(Guid userIdToCheck)
+        {
+            try
+            {
+                return await this._context.Users.Where(user => user.UserId == userIdToCheck).Include(user => user.VisitedCountries).Include(user => user.VisitedCities).SingleOrDefaultAsync();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<bool> DeleteUser(User userToRemove)
+        {
+            try
+            {
+                this._context.Users.Remove(userToRemove);
+                await this._context.SaveChangesAsync();
+                return true;
+            }
+            catch (System.Exception)
+            {
                 throw;
             }
         }

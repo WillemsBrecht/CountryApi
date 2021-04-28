@@ -15,6 +15,7 @@ namespace CountryApi.Services
         Task<bool> CheckIfCountryExists(Country countryToCheck);
         Task<List<City>> GetAllCities(string countryToSearch);
         Task<List<Country>> GetAllCountries(bool showCities);
+        Task<City> GetCityById(Guid cityId);
     }
 
     public class CountryService : ICountryService
@@ -52,20 +53,28 @@ namespace CountryApi.Services
 
         public async Task<City> AddCity(City cityToAdd)
         {
-            if (await this._cityRepo.CheckIfCityExists(cityToAdd) == false)
+            Country country = await this._countryRepo.GetCountryByISOCode(cityToAdd.CountryISOCode);
+            bool countryExists = await this._countryRepo.CheckIfCountryExists(country);
+            if(countryExists == false)
+            {
+                // return bad request
+            }
+            if (await this._cityRepo.CheckIfCityExists(cityToAdd) == false && countryExists)
             {
                 cityToAdd.CityId = Guid.NewGuid();
                 return await this._cityRepo.AddCity(cityToAdd);
             }
-            else
-            {
-                return await this._cityRepo.GetCityByName(cityToAdd.Name, cityToAdd.CountryISOCode);
-            }
+            return await this._cityRepo.GetCityByName(cityToAdd.Name, cityToAdd.CountryISOCode);
         }
 
         public async Task<bool> CheckIfCountryExists(Country countryToCheck)
         {
             return await this._countryRepo.CheckIfCountryExists(countryToCheck);
+        }
+
+        public async Task<City> GetCityById(Guid cityId)
+        {
+            return await this._cityRepo.GetCityById(cityId);
         }
 
         public async Task<bool> CheckIfCityExists(City cityToCheck)
