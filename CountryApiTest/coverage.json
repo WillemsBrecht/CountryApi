@@ -1,6 +1,6 @@
 {
   "CountryApi.dll": {
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Program.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Program.cs": {
       "CountryApi.Program": {
         "System.Void CountryApi.Program::Main(System.String[])": {
           "Lines": {
@@ -22,7 +22,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Startup.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Startup.cs": {
       "CountryApi.Startup": {
         "Microsoft.Extensions.Configuration.IConfiguration CountryApi.Startup::get_Configuration()": {
           "Lines": {
@@ -124,15 +124,15 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Services\\CountryService.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Services\\CountryService.cs": {
       "CountryApi.Services.CountryService": {
         "System.Void CountryApi.Services.CountryService::.ctor(CountryApi.Repositories.ICountryRepository,CountryApi.Repositories.ICityRepository)": {
           "Lines": {
-            "26": 50,
-            "27": 50,
-            "28": 50,
-            "29": 50,
-            "30": 50
+            "25": 64,
+            "26": 64,
+            "27": 64,
+            "28": 64,
+            "29": 64
           },
           "Branches": []
         }
@@ -140,9 +140,13 @@
       "CountryApi.Services.CountryService/<GetAllCountries>d__3": {
         "System.Void CountryApi.Services.CountryService/<GetAllCountries>d__3::MoveNext()": {
           "Lines": {
-            "33": 1,
+            "32": 1,
             "34": 1,
-            "35": 1
+            "35": 1,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "41": 1
           },
           "Branches": []
         }
@@ -150,9 +154,13 @@
       "CountryApi.Services.CountryService/<GetAllCities>d__4": {
         "System.Void CountryApi.Services.CountryService/<GetAllCities>d__4::MoveNext()": {
           "Lines": {
-            "38": 3,
-            "39": 3,
-            "40": 3
+            "44": 4,
+            "46": 4,
+            "47": 4,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "53": 3
           },
           "Branches": []
         }
@@ -160,27 +168,33 @@
       "CountryApi.Services.CountryService/<AddCountry>d__5": {
         "System.Void CountryApi.Services.CountryService/<AddCountry>d__5::MoveNext()": {
           "Lines": {
-            "43": 1,
-            "44": 1,
-            "45": 0,
-            "46": 0,
-            "49": 1,
-            "50": 1,
-            "52": 1
+            "56": 2,
+            "58": 2,
+            "60": 2,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "67": 1,
+            "68": 1,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "74": 2
           },
           "Branches": [
             {
-              "Line": 44,
-              "Offset": 169,
-              "EndOffset": 174,
+              "Line": 60,
+              "Offset": 170,
+              "EndOffset": 175,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 44,
-              "Offset": 169,
-              "EndOffset": 308,
+              "Line": 60,
+              "Offset": 170,
+              "EndOffset": 367,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
@@ -191,48 +205,57 @@
       "CountryApi.Services.CountryService/<AddCity>d__6": {
         "System.Void CountryApi.Services.CountryService/<AddCity>d__6::MoveNext()": {
           "Lines": {
-            "55": 1,
-            "56": 1,
-            "57": 1,
-            "58": 1,
-            "59": 0,
-            "61": 0,
-            "62": 1,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "67": 1,
-            "68": 1
+            "77": 3,
+            "79": 3,
+            "80": 3,
+            "81": 3,
+            "82": 3,
+            "86": 3,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "92": 2,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "100": 1,
+            "101": 1,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "107": 3
           },
           "Branches": [
             {
-              "Line": 58,
-              "Offset": 344,
-              "EndOffset": 346,
+              "Line": 86,
+              "Offset": 505,
+              "EndOffset": 507,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
-            },
-            {
-              "Line": 58,
-              "Offset": 344,
-              "EndOffset": 348,
-              "Path": 1,
-              "Ordinal": 1,
               "Hits": 1
             },
             {
-              "Line": 62,
-              "Offset": 488,
-              "EndOffset": 493,
-              "Path": 0,
-              "Ordinal": 2,
-              "Hits": 0
+              "Line": 86,
+              "Offset": 505,
+              "EndOffset": 537,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
             },
             {
-              "Line": 62,
-              "Offset": 488,
-              "EndOffset": 643,
+              "Line": 92,
+              "Offset": 557,
+              "EndOffset": 562,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 92,
+              "Offset": 557,
+              "EndOffset": 770,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 1
@@ -243,9 +266,13 @@
       "CountryApi.Services.CountryService/<CheckIfCountryExists>d__7": {
         "System.Void CountryApi.Services.CountryService/<CheckIfCountryExists>d__7::MoveNext()": {
           "Lines": {
-            "71": 2,
-            "72": 2,
-            "73": 2
+            "110": 5,
+            "112": 5,
+            "113": 5,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "119": 5
           },
           "Branches": []
         }
@@ -253,50 +280,48 @@
       "CountryApi.Services.CountryService/<GetCityById>d__8": {
         "System.Void CountryApi.Services.CountryService/<GetCityById>d__8::MoveNext()": {
           "Lines": {
-            "76": 2,
-            "77": 2,
-            "78": 2
-          },
-          "Branches": []
-        }
-      },
-      "CountryApi.Services.CountryService/<CheckIfCityExists>d__9": {
-        "System.Void CountryApi.Services.CountryService/<CheckIfCityExists>d__9::MoveNext()": {
-          "Lines": {
-            "81": 1,
-            "82": 1,
-            "83": 1
+            "122": 5,
+            "124": 5,
+            "125": 5,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "131": 5
           },
           "Branches": []
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Services\\UserService.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Services\\UserService.cs": {
       "CountryApi.Services.UserService": {
         "System.Collections.Generic.List`1<CountryApi.Models.UserCountry> CountryApi.Services.UserService::FillUserCountryList(System.Collections.Generic.List`1<CountryApi.Models.UserCountry>,System.Guid)": {
           "Lines": {
-            "47": 1,
-            "48": 1,
-            "49": 3,
-            "50": 0,
-            "51": 0,
-            "52": 0,
-            "53": 1,
-            "54": 1
+            "55": 1,
+            "57": 1,
+            "58": 1,
+            "59": 3,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 1,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "69": 1
           },
           "Branches": [
             {
-              "Line": 49,
-              "Offset": 67,
-              "EndOffset": 17,
+              "Line": 59,
+              "Offset": 68,
+              "EndOffset": 18,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 0
             },
             {
-              "Line": 49,
-              "Offset": 67,
-              "EndOffset": 69,
+              "Line": 59,
+              "Offset": 68,
+              "EndOffset": 70,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 1
@@ -305,28 +330,32 @@
         },
         "System.Collections.Generic.List`1<CountryApi.Models.UserCity> CountryApi.Services.UserService::FillUserCityList(System.Collections.Generic.List`1<CountryApi.Models.UserCity>,System.Guid)": {
           "Lines": {
-            "57": 1,
-            "58": 1,
-            "59": 3,
-            "60": 0,
-            "61": 0,
-            "62": 0,
-            "63": 1,
-            "64": 1
+            "72": 1,
+            "74": 1,
+            "75": 1,
+            "76": 3,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 1,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "86": 1
           },
           "Branches": [
             {
-              "Line": 59,
-              "Offset": 67,
-              "EndOffset": 17,
+              "Line": 76,
+              "Offset": 68,
+              "EndOffset": 18,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 0
             },
             {
-              "Line": 59,
-              "Offset": 67,
-              "EndOffset": 69,
+              "Line": 76,
+              "Offset": 68,
+              "EndOffset": 70,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 1
@@ -335,11 +364,11 @@
         },
         "System.Void CountryApi.Services.UserService::.ctor(CountryApi.Repositories.IUserRepository,CountryApi.Services.ICountryService)": {
           "Lines": {
-            "27": 25,
-            "28": 25,
-            "29": 25,
-            "30": 25,
-            "31": 25
+            "28": 32,
+            "29": 32,
+            "30": 32,
+            "31": 32,
+            "32": 32
           },
           "Branches": []
         }
@@ -347,29 +376,33 @@
       "CountryApi.Services.UserService/<AddUser>d__3": {
         "System.Void CountryApi.Services.UserService/<AddUser>d__3::MoveNext()": {
           "Lines": {
-            "34": 2,
             "35": 2,
-            "36": 1,
-            "37": 1,
+            "37": 2,
+            "38": 2,
+            "39": 1,
             "40": 1,
-            "41": 1,
-            "42": 1,
             "43": 1,
-            "44": 2
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "52": 2
           },
           "Branches": [
             {
-              "Line": 35,
-              "Offset": 152,
-              "EndOffset": 154,
+              "Line": 38,
+              "Offset": 162,
+              "EndOffset": 164,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 1
             },
             {
-              "Line": 35,
-              "Offset": 152,
-              "EndOffset": 167,
+              "Line": 38,
+              "Offset": 162,
+              "EndOffset": 177,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
@@ -380,9 +413,13 @@
       "CountryApi.Services.UserService/<GetAllUsers>d__6": {
         "System.Void CountryApi.Services.UserService/<GetAllUsers>d__6::MoveNext()": {
           "Lines": {
-            "67": 1,
-            "68": 1,
-            "69": 1
+            "89": 1,
+            "91": 1,
+            "92": 1,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "98": 1
           },
           "Branches": []
         }
@@ -390,9 +427,13 @@
       "CountryApi.Services.UserService/<GetUserByUsername>d__7": {
         "System.Void CountryApi.Services.UserService/<GetUserByUsername>d__7::MoveNext()": {
           "Lines": {
-            "72": 6,
-            "73": 6,
-            "74": 6
+            "101": 6,
+            "103": 6,
+            "104": 6,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "110": 6
           },
           "Branches": []
         }
@@ -400,89 +441,93 @@
       "CountryApi.Services.UserService/<addUserVisitedCountry>d__8": {
         "System.Void CountryApi.Services.UserService/<addUserVisitedCountry>d__8::MoveNext()": {
           "Lines": {
-            "77": 2,
-            "78": 2,
-            "79": 2,
-            "80": 2,
-            "81": 2,
-            "82": 1,
-            "83": 1,
-            "84": 1,
-            "85": 1,
-            "88": 4,
-            "89": 1,
-            "90": 1,
-            "91": 1,
-            "92": 1,
-            "93": 1,
-            "94": 1,
-            "96": 0,
-            "97": 0,
-            "98": 0,
-            "99": 0,
-            "100": 2
+            "113": 2,
+            "115": 2,
+            "116": 2,
+            "117": 2,
+            "118": 2,
+            "119": 2,
+            "120": 1,
+            "121": 1,
+            "122": 1,
+            "123": 1,
+            "126": 4,
+            "127": 1,
+            "128": 1,
+            "129": 1,
+            "130": 1,
+            "131": 1,
+            "132": 1,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "143": 2
           },
           "Branches": [
             {
-              "Line": 81,
-              "Offset": 375,
-              "EndOffset": 380,
+              "Line": 119,
+              "Offset": 390,
+              "EndOffset": 395,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 1
             },
             {
-              "Line": 81,
-              "Offset": 375,
-              "EndOffset": 515,
+              "Line": 119,
+              "Offset": 390,
+              "EndOffset": 530,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 2
             },
             {
-              "Line": 81,
-              "Offset": 525,
-              "EndOffset": 527,
+              "Line": 119,
+              "Offset": 540,
+              "EndOffset": 542,
               "Path": 0,
               "Ordinal": 2,
               "Hits": 1
             },
             {
-              "Line": 81,
-              "Offset": 525,
-              "EndOffset": 570,
+              "Line": 119,
+              "Offset": 540,
+              "EndOffset": 585,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 1
             },
             {
-              "Line": 88,
-              "Offset": 703,
-              "EndOffset": 595,
+              "Line": 126,
+              "Offset": 718,
+              "EndOffset": 610,
               "Path": 1,
               "Ordinal": 7,
               "Hits": 1
             },
             {
-              "Line": 90,
-              "Offset": 639,
-              "EndOffset": 641,
+              "Line": 128,
+              "Offset": 654,
+              "EndOffset": 656,
               "Path": 0,
               "Ordinal": 4,
               "Hits": 1
             },
             {
-              "Line": 90,
-              "Offset": 639,
-              "EndOffset": 684,
+              "Line": 128,
+              "Offset": 654,
+              "EndOffset": 699,
               "Path": 1,
               "Ordinal": 5,
               "Hits": 0
             },
             {
-              "Line": 88,
-              "Offset": 703,
-              "EndOffset": 705,
+              "Line": 126,
+              "Offset": 718,
+              "EndOffset": 720,
               "Path": 0,
               "Ordinal": 6,
               "Hits": 0
@@ -493,156 +538,243 @@
       "CountryApi.Services.UserService/<GetAllUsersThatVisitedCountry>d__9": {
         "System.Void CountryApi.Services.UserService/<GetAllUsersThatVisitedCountry>d__9::MoveNext()": {
           "Lines": {
-            "103": 3,
-            "104": 3,
-            "105": 3
-          },
-          "Branches": []
-        }
-      },
-      "CountryApi.Services.UserService/<addUserVisitedCity>d__10": {
-        "System.Void CountryApi.Services.UserService/<addUserVisitedCity>d__10::MoveNext()": {
-          "Lines": {
-            "108": 2,
-            "109": 2,
-            "110": 2,
-            "111": 2,
-            "113": 2,
-            "114": 1,
-            "115": 1,
-            "116": 1,
-            "117": 1,
-            "120": 4,
-            "121": 1,
-            "122": 1,
-            "123": 1,
-            "124": 1,
-            "125": 1,
-            "126": 1,
-            "128": 0,
-            "129": 0,
-            "130": 0,
-            "131": 0,
-            "132": 2
+            "146": 3,
+            "148": 3,
+            "150": 3,
+            "151": 3,
+            "152": 1,
+            "153": 1,
+            "154": 1,
+            "157": 2,
+            "158": 2,
+            "159": 2,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "165": 3
           },
           "Branches": [
             {
-              "Line": 113,
-              "Offset": 379,
-              "EndOffset": 384,
+              "Line": 151,
+              "Offset": 178,
+              "EndOffset": 180,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 1
             },
             {
-              "Line": 113,
-              "Offset": 379,
-              "EndOffset": 519,
+              "Line": 151,
+              "Offset": 178,
+              "EndOffset": 210,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "CountryApi.Services.UserService/<GetAllUsersThatVisitedCity>d__10": {
+        "System.Void CountryApi.Services.UserService/<GetAllUsersThatVisitedCity>d__10::MoveNext()": {
+          "Lines": {
+            "168": 3,
+            "170": 3,
+            "172": 3,
+            "173": 3,
+            "174": 1,
+            "175": 1,
+            "176": 1,
+            "179": 2,
+            "180": 2,
+            "181": 2,
+            "183": 0,
+            "184": 0,
+            "185": 0,
+            "187": 3
+          },
+          "Branches": [
+            {
+              "Line": 173,
+              "Offset": 185,
+              "EndOffset": 187,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 173,
+              "Offset": 185,
+              "EndOffset": 217,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "CountryApi.Services.UserService/<addUserVisitedCity>d__11": {
+        "System.Void CountryApi.Services.UserService/<addUserVisitedCity>d__11::MoveNext()": {
+          "Lines": {
+            "190": 2,
+            "192": 2,
+            "193": 2,
+            "194": 2,
+            "195": 2,
+            "197": 2,
+            "198": 1,
+            "199": 1,
+            "200": 1,
+            "201": 1,
+            "204": 4,
+            "205": 1,
+            "206": 1,
+            "207": 1,
+            "208": 1,
+            "209": 1,
+            "210": 1,
+            "212": 0,
+            "213": 0,
+            "214": 0,
+            "215": 0,
+            "217": 0,
+            "218": 0,
+            "219": 0,
+            "221": 2
+          },
+          "Branches": [
+            {
+              "Line": 197,
+              "Offset": 380,
+              "EndOffset": 385,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 197,
+              "Offset": 380,
+              "EndOffset": 520,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 2
             },
             {
-              "Line": 113,
-              "Offset": 537,
-              "EndOffset": 542,
+              "Line": 197,
+              "Offset": 530,
+              "EndOffset": 532,
               "Path": 0,
               "Ordinal": 2,
               "Hits": 1
             },
             {
-              "Line": 113,
-              "Offset": 537,
-              "EndOffset": 677,
+              "Line": 197,
+              "Offset": 530,
+              "EndOffset": 575,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 2
+              "Hits": 1
             },
             {
-              "Line": 113,
-              "Offset": 687,
-              "EndOffset": 689,
+              "Line": 204,
+              "Offset": 708,
+              "EndOffset": 600,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 206,
+              "Offset": 644,
+              "EndOffset": 646,
               "Path": 0,
               "Ordinal": 4,
               "Hits": 1
             },
             {
-              "Line": 113,
-              "Offset": 687,
-              "EndOffset": 732,
+              "Line": 206,
+              "Offset": 644,
+              "EndOffset": 689,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 1
-            },
-            {
-              "Line": 120,
-              "Offset": 865,
-              "EndOffset": 757,
-              "Path": 1,
-              "Ordinal": 9,
-              "Hits": 1
-            },
-            {
-              "Line": 122,
-              "Offset": 801,
-              "EndOffset": 803,
-              "Path": 0,
-              "Ordinal": 6,
-              "Hits": 1
-            },
-            {
-              "Line": 122,
-              "Offset": 801,
-              "EndOffset": 846,
-              "Path": 1,
-              "Ordinal": 7,
               "Hits": 0
             },
             {
-              "Line": 120,
-              "Offset": 865,
-              "EndOffset": 867,
+              "Line": 204,
+              "Offset": 708,
+              "EndOffset": 710,
               "Path": 0,
-              "Ordinal": 8,
+              "Ordinal": 6,
               "Hits": 0
             }
           ]
         }
       },
-      "CountryApi.Services.UserService/<UpdateUser>d__11": {
-        "System.Void CountryApi.Services.UserService/<UpdateUser>d__11::MoveNext()": {
+      "CountryApi.Services.UserService/<UpdateUser>d__12": {
+        "System.Void CountryApi.Services.UserService/<UpdateUser>d__12::MoveNext()": {
           "Lines": {
-            "135": 1,
-            "136": 1,
-            "137": 1
-          },
-          "Branches": []
-        }
-      },
-      "CountryApi.Services.UserService/<DeleteUser>d__12": {
-        "System.Void CountryApi.Services.UserService/<DeleteUser>d__12::MoveNext()": {
-          "Lines": {
-            "140": 2,
-            "141": 2,
-            "142": 2,
-            "143": 1,
-            "144": 1,
-            "146": 1,
-            "147": 2
+            "224": 1,
+            "226": 1,
+            "228": 1,
+            "229": 1,
+            "230": 1,
+            "231": 1,
+            "232": 1,
+            "234": 0,
+            "235": 0,
+            "237": 0,
+            "238": 0,
+            "239": 0,
+            "241": 1
           },
           "Branches": [
             {
-              "Line": 142,
-              "Offset": 175,
-              "EndOffset": 177,
+              "Line": 228,
+              "Offset": 170,
+              "EndOffset": 175,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 1
             },
             {
-              "Line": 142,
-              "Offset": 175,
-              "EndOffset": 185,
+              "Line": 228,
+              "Offset": 170,
+              "EndOffset": 374,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "CountryApi.Services.UserService/<DeleteUser>d__13": {
+        "System.Void CountryApi.Services.UserService/<DeleteUser>d__13::MoveNext()": {
+          "Lines": {
+            "244": 2,
+            "246": 2,
+            "248": 2,
+            "249": 2,
+            "250": 1,
+            "251": 1,
+            "252": 1,
+            "254": 1,
+            "255": 1,
+            "257": 0,
+            "258": 0,
+            "259": 0,
+            "261": 2
+          },
+          "Branches": [
+            {
+              "Line": 249,
+              "Offset": 185,
+              "EndOffset": 187,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 249,
+              "Offset": 185,
+              "EndOffset": 217,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
@@ -651,14 +783,14 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Repositories\\CityRepository.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Repositories\\CityRepository.cs": {
       "CountryApi.Repositories.CityRepository": {
         "System.Void CountryApi.Repositories.CityRepository::.ctor(CountryApi.Context.IVisitContext)": {
           "Lines": {
-            "24": 50,
-            "25": 50,
-            "26": 50,
-            "27": 50
+            "23": 64,
+            "24": 64,
+            "25": 64,
+            "26": 64
           },
           "Branches": []
         }
@@ -666,21 +798,21 @@
       "CountryApi.Repositories.CityRepository/<GetAllCities>d__2": {
         "System.Void CountryApi.Repositories.CityRepository/<GetAllCities>d__2::MoveNext()": {
           "Lines": {
-            "30": 3,
-            "32": 3,
-            "33": 3,
+            "29": 4,
+            "31": 4,
+            "32": 4,
+            "33": 1,
             "34": 1,
-            "35": 1,
+            "37": 2,
             "38": 2,
-            "39": 2,
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "46": 3
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "45": 3
           },
           "Branches": [
             {
-              "Line": 33,
+              "Line": 32,
               "Offset": 87,
               "EndOffset": 92,
               "Path": 0,
@@ -688,7 +820,7 @@
               "Hits": 1
             },
             {
-              "Line": 33,
+              "Line": 32,
               "Offset": 87,
               "EndOffset": 232,
               "Path": 1,
@@ -701,13 +833,13 @@
       "CountryApi.Repositories.CityRepository/<GetCityByName>d__3": {
         "System.Void CountryApi.Repositories.CityRepository/<GetCityByName>d__3::MoveNext()": {
           "Lines": {
-            "49": 1,
-            "51": 1,
-            "52": 1,
+            "48": 3,
+            "50": 3,
+            "51": 3,
+            "53": 0,
             "54": 0,
             "55": 0,
-            "56": 0,
-            "58": 1
+            "57": 3
           },
           "Branches": []
         }
@@ -715,13 +847,13 @@
       "CountryApi.Repositories.CityRepository/<GetCityById>d__4": {
         "System.Void CountryApi.Repositories.CityRepository/<GetCityById>d__4::MoveNext()": {
           "Lines": {
-            "62": 2,
-            "64": 2,
-            "65": 2,
+            "61": 5,
+            "63": 5,
+            "64": 5,
+            "66": 0,
             "67": 0,
             "68": 0,
-            "69": 0,
-            "71": 2
+            "70": 5
           },
           "Branches": []
         }
@@ -729,42 +861,28 @@
       "CountryApi.Repositories.CityRepository/<AddCity>d__5": {
         "System.Void CountryApi.Repositories.CityRepository/<AddCity>d__5::MoveNext()": {
           "Lines": {
-            "74": 0,
-            "76": 0,
-            "77": 0,
-            "78": 0,
-            "79": 0,
+            "73": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "80": 0,
             "81": 0,
             "82": 0,
-            "83": 0,
-            "85": 0
-          },
-          "Branches": []
-        }
-      },
-      "CountryApi.Repositories.CityRepository/<CheckIfCityExists>d__6": {
-        "System.Void CountryApi.Repositories.CityRepository/<CheckIfCityExists>d__6::MoveNext()": {
-          "Lines": {
-            "88": 2,
-            "90": 2,
-            "91": 2,
-            "93": 0,
-            "94": 0,
-            "95": 0,
-            "97": 2
+            "84": 1
           },
           "Branches": []
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Repositories\\CountryRepository.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Repositories\\CountryRepository.cs": {
       "CountryApi.Repositories.CountryRepository": {
         "System.Void CountryApi.Repositories.CountryRepository::.ctor(CountryApi.Context.IVisitContext)": {
           "Lines": {
-            "24": 50,
-            "25": 50,
-            "26": 50,
-            "27": 50
+            "24": 64,
+            "25": 64,
+            "26": 64,
+            "27": 64
           },
           "Branches": []
         }
@@ -807,15 +925,15 @@
       "CountryApi.Repositories.CountryRepository/<AddCountry>d__3": {
         "System.Void CountryApi.Repositories.CountryRepository/<AddCountry>d__3::MoveNext()": {
           "Lines": {
-            "49": 0,
-            "51": 0,
-            "52": 0,
-            "53": 0,
-            "54": 0,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
             "56": 0,
             "57": 0,
             "58": 0,
-            "60": 0
+            "60": 1
           },
           "Branches": []
         }
@@ -823,13 +941,13 @@
       "CountryApi.Repositories.CountryRepository/<CheckIfCountryExists>d__4": {
         "System.Void CountryApi.Repositories.CountryRepository/<CheckIfCountryExists>d__4::MoveNext()": {
           "Lines": {
-            "63": 4,
-            "65": 4,
-            "66": 4,
+            "63": 10,
+            "65": 10,
+            "66": 10,
             "68": 0,
             "69": 0,
             "70": 0,
-            "72": 4
+            "72": 10
           },
           "Branches": []
         }
@@ -837,26 +955,26 @@
       "CountryApi.Repositories.CountryRepository/<GetCountryByISOCode>d__5": {
         "System.Void CountryApi.Repositories.CountryRepository/<GetCountryByISOCode>d__5::MoveNext()": {
           "Lines": {
-            "75": 2,
-            "77": 2,
-            "78": 2,
+            "75": 3,
+            "77": 3,
+            "78": 3,
             "80": 0,
             "81": 0,
             "82": 0,
-            "84": 2
+            "84": 3
           },
           "Branches": []
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Repositories\\UserRepository.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Repositories\\UserRepository.cs": {
       "CountryApi.Repositories.UserRepository": {
         "System.Void CountryApi.Repositories.UserRepository::.ctor(CountryApi.Context.IVisitContext)": {
           "Lines": {
-            "31": 25,
-            "32": 25,
-            "33": 25,
-            "34": 25
+            "32": 32,
+            "33": 32,
+            "34": 32,
+            "35": 32
           },
           "Branches": []
         }
@@ -864,9 +982,9 @@
       "CountryApi.Repositories.UserRepository/<CheckIfUserExists>d__2": {
         "System.Void CountryApi.Repositories.UserRepository/<CheckIfUserExists>d__2::MoveNext()": {
           "Lines": {
-            "37": 4,
             "38": 4,
-            "39": 4
+            "39": 4,
+            "40": 4
           },
           "Branches": []
         }
@@ -874,15 +992,15 @@
       "CountryApi.Repositories.UserRepository/<AddUser>d__3": {
         "System.Void CountryApi.Repositories.UserRepository/<AddUser>d__3::MoveNext()": {
           "Lines": {
-            "42": 1,
-            "44": 1,
+            "43": 1,
             "45": 1,
             "46": 1,
             "47": 1,
-            "49": 0,
+            "48": 1,
             "50": 0,
             "51": 0,
-            "53": 1
+            "52": 0,
+            "54": 1
           },
           "Branches": []
         }
@@ -890,13 +1008,13 @@
       "CountryApi.Repositories.UserRepository/<GetAllUsers>d__4": {
         "System.Void CountryApi.Repositories.UserRepository/<GetAllUsers>d__4::MoveNext()": {
           "Lines": {
-            "56": 1,
-            "58": 1,
+            "57": 1,
             "59": 1,
-            "61": 0,
+            "60": 1,
             "62": 0,
             "63": 0,
-            "65": 1
+            "64": 0,
+            "66": 1
           },
           "Branches": []
         }
@@ -904,26 +1022,26 @@
       "CountryApi.Repositories.UserRepository/<GetUserByUsername>d__5": {
         "System.Void CountryApi.Repositories.UserRepository/<GetUserByUsername>d__5::MoveNext()": {
           "Lines": {
-            "68": 11,
-            "70": 11,
+            "69": 11,
             "71": 11,
-            "72": 1,
+            "72": 11,
             "73": 1,
-            "75": 10,
-            "76": 3,
+            "74": 1,
+            "76": 10,
             "77": 3,
-            "79": 7,
-            "80": 3,
+            "78": 3,
+            "80": 7,
             "81": 3,
-            "83": 4,
-            "85": 0,
+            "82": 3,
+            "84": 4,
             "86": 0,
             "87": 0,
-            "89": 11
+            "88": 0,
+            "90": 11
           },
           "Branches": [
             {
-              "Line": 71,
+              "Line": 72,
               "Offset": 105,
               "EndOffset": 110,
               "Path": 0,
@@ -931,7 +1049,7 @@
               "Hits": 1
             },
             {
-              "Line": 71,
+              "Line": 72,
               "Offset": 105,
               "EndOffset": 575,
               "Path": 1,
@@ -939,7 +1057,7 @@
               "Hits": 10
             },
             {
-              "Line": 75,
+              "Line": 76,
               "Offset": 581,
               "EndOffset": 583,
               "Path": 0,
@@ -947,7 +1065,7 @@
               "Hits": 3
             },
             {
-              "Line": 75,
+              "Line": 76,
               "Offset": 581,
               "EndOffset": 594,
               "Path": 1,
@@ -955,7 +1073,7 @@
               "Hits": 7
             },
             {
-              "Line": 75,
+              "Line": 76,
               "Offset": 599,
               "EndOffset": 604,
               "Path": 0,
@@ -963,7 +1081,7 @@
               "Hits": 3
             },
             {
-              "Line": 75,
+              "Line": 76,
               "Offset": 599,
               "EndOffset": 942,
               "Path": 1,
@@ -971,7 +1089,7 @@
               "Hits": 7
             },
             {
-              "Line": 79,
+              "Line": 80,
               "Offset": 948,
               "EndOffset": 950,
               "Path": 0,
@@ -979,7 +1097,7 @@
               "Hits": 3
             },
             {
-              "Line": 79,
+              "Line": 80,
               "Offset": 948,
               "EndOffset": 961,
               "Path": 1,
@@ -987,7 +1105,7 @@
               "Hits": 4
             },
             {
-              "Line": 79,
+              "Line": 80,
               "Offset": 966,
               "EndOffset": 971,
               "Path": 0,
@@ -995,7 +1113,7 @@
               "Hits": 3
             },
             {
-              "Line": 79,
+              "Line": 80,
               "Offset": 966,
               "EndOffset": 1374,
               "Path": 1,
@@ -1008,15 +1126,15 @@
       "CountryApi.Repositories.UserRepository/<AddUserVisitedCountry>d__6": {
         "System.Void CountryApi.Repositories.UserRepository/<AddUserVisitedCountry>d__6::MoveNext()": {
           "Lines": {
-            "92": 0,
-            "94": 0,
+            "93": 0,
             "95": 0,
             "96": 0,
             "97": 0,
-            "99": 0,
+            "98": 0,
             "100": 0,
             "101": 0,
-            "103": 0
+            "102": 0,
+            "104": 0
           },
           "Branches": []
         }
@@ -1024,208 +1142,274 @@
       "CountryApi.Repositories.UserRepository/<GetAllUsersThatVisitedCountry>d__7": {
         "System.Void CountryApi.Repositories.UserRepository/<GetAllUsersThatVisitedCountry>d__7::MoveNext()": {
           "Lines": {
-            "106": 3,
-            "108": 3,
-            "109": 3,
-            "111": 0,
+            "107": 2,
+            "109": 2,
+            "110": 2,
             "112": 0,
+            "113": 0,
             "114": 0,
-            "116": 3
+            "116": 2
           },
           "Branches": []
         }
       },
-      "CountryApi.Repositories.UserRepository/<AddUserVisitedCity>d__8": {
-        "System.Void CountryApi.Repositories.UserRepository/<AddUserVisitedCity>d__8::MoveNext()": {
+      "CountryApi.Repositories.UserRepository/<GetAllUsersThatVisitedCity>d__8": {
+        "System.Void CountryApi.Repositories.UserRepository/<GetAllUsersThatVisitedCity>d__8::MoveNext()": {
           "Lines": {
-            "119": 0,
-            "121": 0,
-            "122": 0,
-            "123": 0,
+            "119": 2,
+            "121": 2,
+            "122": 2,
             "124": 0,
+            "125": 0,
             "126": 0,
-            "127": 0,
-            "129": 0,
-            "131": 0
+            "128": 2
           },
           "Branches": []
         }
       },
-      "CountryApi.Repositories.UserRepository/<UpdateUser>d__9": {
-        "System.Void CountryApi.Repositories.UserRepository/<UpdateUser>d__9::MoveNext()": {
+      "CountryApi.Repositories.UserRepository/<AddUserVisitedCity>d__9": {
+        "System.Void CountryApi.Repositories.UserRepository/<AddUserVisitedCity>d__9::MoveNext()": {
           "Lines": {
-            "134": 1,
-            "136": 1,
-            "137": 1,
-            "138": 1,
-            "139": 1,
-            "140": 1,
-            "141": 1,
-            "142": 1,
-            "144": 0,
-            "145": 0,
-            "147": 0,
-            "149": 1
+            "131": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "142": 0
           },
           "Branches": []
         }
       },
-      "CountryApi.Repositories.UserRepository/<GetUserById>d__10": {
-        "System.Void CountryApi.Repositories.UserRepository/<GetUserById>d__10::MoveNext()": {
+      "CountryApi.Repositories.UserRepository/<UpdateUser>d__10": {
+        "System.Void CountryApi.Repositories.UserRepository/<UpdateUser>d__10::MoveNext()": {
           "Lines": {
-            "152": 2,
-            "154": 2,
-            "155": 2,
-            "157": 0,
+            "145": 1,
+            "147": 1,
+            "148": 1,
+            "149": 1,
+            "150": 1,
+            "151": 1,
+            "152": 1,
+            "153": 1,
+            "155": 0,
+            "156": 0,
             "158": 0,
-            "159": 0,
-            "161": 2
+            "160": 1
           },
           "Branches": []
         }
       },
-      "CountryApi.Repositories.UserRepository/<DeleteUser>d__11": {
-        "System.Void CountryApi.Repositories.UserRepository/<DeleteUser>d__11::MoveNext()": {
+      "CountryApi.Repositories.UserRepository/<GetUserById>d__11": {
+        "System.Void CountryApi.Repositories.UserRepository/<GetUserById>d__11::MoveNext()": {
           "Lines": {
-            "164": 1,
-            "166": 1,
-            "167": 1,
-            "168": 1,
-            "169": 1,
-            "171": 0,
-            "172": 0,
-            "173": 0,
-            "175": 1
+            "163": 3,
+            "165": 3,
+            "166": 3,
+            "168": 0,
+            "169": 0,
+            "170": 0,
+            "172": 3
+          },
+          "Branches": []
+        }
+      },
+      "CountryApi.Repositories.UserRepository/<DeleteUser>d__12": {
+        "System.Void CountryApi.Repositories.UserRepository/<DeleteUser>d__12::MoveNext()": {
+          "Lines": {
+            "175": 1,
+            "177": 1,
+            "178": 1,
+            "179": 1,
+            "180": 1,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "186": 1
           },
           "Branches": []
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\City.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\City.cs": {
       "CountryApi.Models.City": {
         "System.Guid CountryApi.Models.City::get_CityId()": {
           "Lines": {
-            "8": 117
+            "9": 125
           },
           "Branches": []
         },
         "System.String CountryApi.Models.City::get_Name()": {
           "Lines": {
-            "9": 121
+            "11": 127
           },
           "Branches": []
         },
         "System.Int32 CountryApi.Models.City::get_Population()": {
           "Lines": {
-            "10": 118
+            "12": 124
           },
           "Branches": []
         },
         "CountryApi.Models.Country CountryApi.Models.City::get_Country()": {
           "Lines": {
-            "12": 21
+            "14": 25
           },
           "Branches": []
         },
         "System.String CountryApi.Models.City::get_CountryISOCode()": {
           "Lines": {
-            "13": 122
+            "16": 133
           },
           "Branches": []
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\Country.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\CityResult.cs": {
+      "CountryApi.Models.CityResult": {
+        "System.Collections.Generic.List`1<CountryApi.Models.City> CountryApi.Models.CityResult::get_CityList()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "CountryApi.Models.City CountryApi.Models.CityResult::get_OneCity()": {
+          "Lines": {
+            "15": 2
+          },
+          "Branches": []
+        },
+        "System.Void CountryApi.Models.CityResult::.ctor(System.Boolean,System.String)": {
+          "Lines": {
+            "9": 3,
+            "10": 3,
+            "11": 3,
+            "12": 3,
+            "13": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\Country.cs": {
       "CountryApi.Models.Country": {
         "System.String CountryApi.Models.Country::get_ISOCode()": {
           "Lines": {
-            "11": 35
+            "12": 39
           },
           "Branches": []
         },
         "System.String CountryApi.Models.Country::get_Name()": {
           "Lines": {
-            "12": 28
+            "14": 33
           },
           "Branches": []
         },
         "System.Int32 CountryApi.Models.Country::get_Population()": {
           "Lines": {
-            "13": 28
+            "15": 33
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<CountryApi.Models.City> CountryApi.Models.Country::get_Cities()": {
           "Lines": {
-            "14": 22
+            "16": 26
           },
           "Branches": []
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\Result.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\CountryResult.cs": {
+      "CountryApi.Models.CountryResult": {
+        "System.Collections.Generic.List`1<CountryApi.Models.Country> CountryApi.Models.CountryResult::get_CountryList()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "CountryApi.Models.Country CountryApi.Models.CountryResult::get_OneCountry()": {
+          "Lines": {
+            "15": 2
+          },
+          "Branches": []
+        },
+        "System.Void CountryApi.Models.CountryResult::.ctor(System.Boolean,System.String)": {
+          "Lines": {
+            "8": 2,
+            "9": 2,
+            "10": 2,
+            "11": 2,
+            "12": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\Result.cs": {
       "CountryApi.Models.Result": {
         "System.Boolean CountryApi.Models.Result::get_Success()": {
           "Lines": {
-            "9": 8
+            "9": 36
           },
           "Branches": []
         },
         "System.String CountryApi.Models.Result::get_Message()": {
           "Lines": {
-            "11": 8
+            "11": 29
           },
           "Branches": []
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\User.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\User.cs": {
       "CountryApi.Models.User": {
         "System.Guid CountryApi.Models.User::get_UserId()": {
           "Lines": {
-            "10": 44
+            "10": 54
           },
           "Branches": []
         },
         "System.String CountryApi.Models.User::get_UserName()": {
           "Lines": {
-            "12": 44
+            "12": 52
           },
           "Branches": []
         },
         "System.String CountryApi.Models.User::get_Mail()": {
           "Lines": {
-            "15": 48
+            "15": 56
           },
           "Branches": []
         },
         "System.String CountryApi.Models.User::get_FirstName()": {
           "Lines": {
-            "17": 41
+            "17": 49
           },
           "Branches": []
         },
         "System.String CountryApi.Models.User::get_LastName()": {
           "Lines": {
-            "19": 41
+            "19": 49
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<CountryApi.Models.UserCountry> CountryApi.Models.User::get_VisitedCountries()": {
           "Lines": {
-            "20": 52
+            "20": 61
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<CountryApi.Models.UserCity> CountryApi.Models.User::get_VisitedCities()": {
           "Lines": {
-            "21": 52
+            "21": 61
           },
           "Branches": []
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\UserCity.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\UserCity.cs": {
       "CountryApi.Models.UserCity": {
         "System.Guid CountryApi.Models.UserCity::get_UserId()": {
           "Lines": {
@@ -1247,7 +1431,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\UserCountry.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\UserCountry.cs": {
       "CountryApi.Models.UserCountry": {
         "System.Guid CountryApi.Models.UserCountry::get_UserId()": {
           "Lines": {
@@ -1269,7 +1453,33 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123337_correct tables.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Models\\UserResult.cs": {
+      "CountryApi.Models.UserResult": {
+        "System.Collections.Generic.List`1<CountryApi.Models.User> CountryApi.Models.UserResult::get_userList()": {
+          "Lines": {
+            "14": 8
+          },
+          "Branches": []
+        },
+        "CountryApi.Models.User CountryApi.Models.UserResult::get_OneUser()": {
+          "Lines": {
+            "15": 2
+          },
+          "Branches": []
+        },
+        "System.Void CountryApi.Models.UserResult::.ctor(System.Boolean,System.String)": {
+          "Lines": {
+            "9": 9,
+            "10": 9,
+            "11": 9,
+            "12": 9,
+            "13": 9
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123337_correct tables.cs": {
       "CountryApi.Migrations.correcttables": {
         "System.Void CountryApi.Migrations.correcttables::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -1393,7 +1603,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123337_correct tables.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123337_correct tables.Designer.cs": {
       "CountryApi.Migrations.correcttables": {
         "System.Void CountryApi.Migrations.correcttables::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -1535,7 +1745,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123455_correct tables 2.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123455_correct tables 2.cs": {
       "CountryApi.Migrations.correcttables2": {
         "System.Void CountryApi.Migrations.correcttables2::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -1589,7 +1799,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123455_correct tables 2.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123455_correct tables 2.Designer.cs": {
       "CountryApi.Migrations.correcttables2": {
         "System.Void CountryApi.Migrations.correcttables2::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -1733,7 +1943,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123612_correct tables 3.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123612_correct tables 3.cs": {
       "CountryApi.Migrations.correcttables3": {
         "System.Void CountryApi.Migrations.correcttables3::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -1812,7 +2022,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123612_correct tables 3.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414123612_correct tables 3.Designer.cs": {
       "CountryApi.Migrations.correcttables3": {
         "System.Void CountryApi.Migrations.correcttables3::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -1965,7 +2175,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414124214_correct tables 4.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414124214_correct tables 4.cs": {
       "CountryApi.Migrations.correcttables4": {
         "System.Void CountryApi.Migrations.correcttables4::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -2043,7 +2253,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414124214_correct tables 4.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414124214_correct tables 4.Designer.cs": {
       "CountryApi.Migrations.correcttables4": {
         "System.Void CountryApi.Migrations.correcttables4::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -2208,7 +2418,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414124814_Deleted tables.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414124814_Deleted tables.cs": {
       "CountryApi.Migrations.Deletedtables": {
         "System.Void CountryApi.Migrations.Deletedtables::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -2299,7 +2509,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414124814_Deleted tables.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414124814_Deleted tables.Designer.cs": {
       "CountryApi.Migrations.Deletedtables": {
         "System.Void CountryApi.Migrations.Deletedtables::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -2440,7 +2650,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414125039_Added country seeding.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414125039_Added country seeding.cs": {
       "CountryApi.Migrations.Addedcountryseeding": {
         "System.Void CountryApi.Migrations.Addedcountryseeding::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -2506,7 +2716,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414125039_Added country seeding.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414125039_Added country seeding.Designer.cs": {
       "CountryApi.Migrations.Addedcountryseeding": {
         "System.Void CountryApi.Migrations.Addedcountryseeding::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -2647,7 +2857,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414130145_Added city seeding.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414130145_Added city seeding.cs": {
       "CountryApi.Migrations.Addedcityseeding": {
         "System.Void CountryApi.Migrations.Addedcityseeding::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -2681,7 +2891,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414130145_Added city seeding.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414130145_Added city seeding.Designer.cs": {
       "CountryApi.Migrations.Addedcityseeding": {
         "System.Void CountryApi.Migrations.Addedcityseeding::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -2832,7 +3042,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414130647_Added city seeding 2.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414130647_Added city seeding 2.cs": {
       "CountryApi.Migrations.Addedcityseeding2": {
         "System.Void CountryApi.Migrations.Addedcityseeding2::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -2874,7 +3084,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414130647_Added city seeding 2.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414130647_Added city seeding 2.Designer.cs": {
       "CountryApi.Migrations.Addedcityseeding2": {
         "System.Void CountryApi.Migrations.Addedcityseeding2::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -3023,7 +3233,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414131049_Added city seeding 3.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414131049_Added city seeding 3.cs": {
       "CountryApi.Migrations.Addedcityseeding3": {
         "System.Void CountryApi.Migrations.Addedcityseeding3::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -3057,7 +3267,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414131049_Added city seeding 3.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414131049_Added city seeding 3.Designer.cs": {
       "CountryApi.Migrations.Addedcityseeding3": {
         "System.Void CountryApi.Migrations.Addedcityseeding3::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -3207,7 +3417,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414132200_Added city seeding netherlands and germany.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414132200_Added city seeding netherlands and germany.cs": {
       "CountryApi.Migrations.Addedcityseedingnetherlandsandgermany": {
         "System.Void CountryApi.Migrations.Addedcityseedingnetherlandsandgermany::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -3289,7 +3499,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414132200_Added city seeding netherlands and germany.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414132200_Added city seeding netherlands and germany.Designer.cs": {
       "CountryApi.Migrations.Addedcityseedingnetherlandsandgermany": {
         "System.Void CountryApi.Migrations.Addedcityseedingnetherlandsandgermany::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -3502,7 +3712,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414132250_Added city seeding netherlands and germany 2.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414132250_Added city seeding netherlands and germany 2.cs": {
       "CountryApi.Migrations.Addedcityseedingnetherlandsandgermany2": {
         "System.Void CountryApi.Migrations.Addedcityseedingnetherlandsandgermany2::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -3652,7 +3862,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414132250_Added city seeding netherlands and germany 2.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414132250_Added city seeding netherlands and germany 2.Designer.cs": {
       "CountryApi.Migrations.Addedcityseedingnetherlandsandgermany2": {
         "System.Void CountryApi.Migrations.Addedcityseedingnetherlandsandgermany2::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -3893,7 +4103,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414133605_Added city seeding luxembourg.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414133605_Added city seeding luxembourg.cs": {
       "CountryApi.Migrations.Addedcityseedingluxembourg": {
         "System.Void CountryApi.Migrations.Addedcityseedingluxembourg::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -4114,7 +4324,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414133605_Added city seeding luxembourg.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414133605_Added city seeding luxembourg.Designer.cs": {
       "CountryApi.Migrations.Addedcityseedingluxembourg": {
         "System.Void CountryApi.Migrations.Addedcityseedingluxembourg::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -4396,7 +4606,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414133958_Added city seeding luxembourg 2.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414133958_Added city seeding luxembourg 2.cs": {
       "CountryApi.Migrations.Addedcityseedingluxembourg2": {
         "System.Void CountryApi.Migrations.Addedcityseedingluxembourg2::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -4621,7 +4831,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414133958_Added city seeding luxembourg 2.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210414133958_Added city seeding luxembourg 2.Designer.cs": {
       "CountryApi.Migrations.Addedcityseedingluxembourg2": {
         "System.Void CountryApi.Migrations.Addedcityseedingluxembourg2::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -4910,7 +5120,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210415181338_Added UserCity table.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210415181338_Added UserCity table.cs": {
       "CountryApi.Migrations.AddedUserCitytable": {
         "System.Void CountryApi.Migrations.AddedUserCitytable::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -5159,7 +5369,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210415181338_Added UserCity table.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210415181338_Added UserCity table.Designer.cs": {
       "CountryApi.Migrations.AddedUserCitytable": {
         "System.Void CountryApi.Migrations.AddedUserCitytable::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -5470,7 +5680,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210415184620_Added UserCity table 2.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210415184620_Added UserCity table 2.cs": {
       "CountryApi.Migrations.AddedUserCitytable2": {
         "System.Void CountryApi.Migrations.AddedUserCitytable2::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
@@ -5700,7 +5910,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210415184620_Added UserCity table 2.Designer.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\20210415184620_Added UserCity table 2.Designer.cs": {
       "CountryApi.Migrations.AddedUserCitytable2": {
         "System.Void CountryApi.Migrations.AddedUserCitytable2::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -6013,7 +6223,7 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\VisitContextModelSnapshot.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Migrations\\VisitContextModelSnapshot.cs": {
       "CountryApi.Migrations.VisitContextModelSnapshot": {
         "System.Void CountryApi.Migrations.VisitContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
           "Lines": {
@@ -6326,15 +6536,15 @@
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Controllers\\VisitController.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Controllers\\VisitController.cs": {
       "CountryApi.Controllers.VisitController": {
         "System.Void CountryApi.Controllers.VisitController::.ctor(CountryApi.Services.ICountryService,CountryApi.Services.IUserService)": {
           "Lines": {
-            "18": 25,
-            "19": 25,
-            "20": 25,
-            "21": 25,
-            "22": 25
+            "19": 32,
+            "20": 32,
+            "21": 32,
+            "22": 32,
+            "23": 32
           },
           "Branches": []
         }
@@ -6342,9 +6552,13 @@
       "CountryApi.Controllers.VisitController/<GetAllCountries>d__3": {
         "System.Void CountryApi.Controllers.VisitController/<GetAllCountries>d__3::MoveNext()": {
           "Lines": {
-            "28": 1,
             "29": 1,
-            "30": 1
+            "31": 1,
+            "32": 1,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "38": 1
           },
           "Branches": []
         }
@@ -6352,19 +6566,48 @@
       "CountryApi.Controllers.VisitController/<AddCountry>d__4": {
         "System.Void CountryApi.Controllers.VisitController/<AddCountry>d__4::MoveNext()": {
           "Lines": {
-            "35": 1,
-            "36": 1,
-            "37": 1
+            "43": 2,
+            "45": 2,
+            "46": 2,
+            "47": 2,
+            "48": 1,
+            "49": 1,
+            "52": 1,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "58": 2
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 47,
+              "Offset": 178,
+              "EndOffset": 180,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 47,
+              "Offset": 178,
+              "EndOffset": 200,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
         }
       },
       "CountryApi.Controllers.VisitController/<GetAllCities>d__5": {
         "System.Void CountryApi.Controllers.VisitController/<GetAllCities>d__5::MoveNext()": {
           "Lines": {
-            "42": 3,
-            "43": 3,
-            "44": 3
+            "63": 4,
+            "65": 4,
+            "66": 4,
+            "68": 1,
+            "69": 1,
+            "70": 1,
+            "72": 4
           },
           "Branches": []
         }
@@ -6372,37 +6615,66 @@
       "CountryApi.Controllers.VisitController/<AddCity>d__6": {
         "System.Void CountryApi.Controllers.VisitController/<AddCity>d__6::MoveNext()": {
           "Lines": {
-            "49": 1,
-            "50": 1,
-            "51": 1
+            "77": 3,
+            "79": 3,
+            "80": 3,
+            "81": 3,
+            "82": 2,
+            "83": 2,
+            "86": 1,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "92": 3
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 81,
+              "Offset": 178,
+              "EndOffset": 180,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 81,
+              "Offset": 178,
+              "EndOffset": 200,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
         }
       },
       "CountryApi.Controllers.VisitController/<AddUser>d__7": {
         "System.Void CountryApi.Controllers.VisitController/<AddUser>d__7::MoveNext()": {
           "Lines": {
-            "56": 2,
-            "57": 2,
-            "58": 2,
-            "59": 1,
-            "60": 1,
-            "62": 1,
-            "63": 2
+            "97": 2,
+            "99": 2,
+            "100": 2,
+            "101": 2,
+            "102": 1,
+            "103": 1,
+            "105": 1,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "111": 2
           },
           "Branches": [
             {
-              "Line": 58,
-              "Offset": 181,
-              "EndOffset": 183,
+              "Line": 101,
+              "Offset": 190,
+              "EndOffset": 192,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 1
             },
             {
-              "Line": 58,
-              "Offset": 181,
-              "EndOffset": 197,
+              "Line": 101,
+              "Offset": 190,
+              "EndOffset": 206,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
@@ -6413,9 +6685,13 @@
       "CountryApi.Controllers.VisitController/<GetAllUsers>d__8": {
         "System.Void CountryApi.Controllers.VisitController/<GetAllUsers>d__8::MoveNext()": {
           "Lines": {
-            "68": 1,
-            "69": 1,
-            "70": 1
+            "116": 1,
+            "118": 1,
+            "119": 1,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "125": 1
           },
           "Branches": []
         }
@@ -6423,9 +6699,13 @@
       "CountryApi.Controllers.VisitController/<GetUserByUsername>d__9": {
         "System.Void CountryApi.Controllers.VisitController/<GetUserByUsername>d__9::MoveNext()": {
           "Lines": {
-            "75": 6,
-            "76": 6,
-            "77": 6
+            "130": 6,
+            "132": 6,
+            "133": 6,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "139": 6
           },
           "Branches": []
         }
@@ -6433,37 +6713,66 @@
       "CountryApi.Controllers.VisitController/<UpdateUser>d__10": {
         "System.Void CountryApi.Controllers.VisitController/<UpdateUser>d__10::MoveNext()": {
           "Lines": {
-            "81": 1,
-            "82": 1,
-            "83": 1
+            "144": 1,
+            "146": 1,
+            "147": 1,
+            "148": 1,
+            "149": 0,
+            "150": 0,
+            "153": 1,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "159": 1
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 148,
+              "Offset": 178,
+              "EndOffset": 180,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 148,
+              "Offset": 178,
+              "EndOffset": 205,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
         }
       },
       "CountryApi.Controllers.VisitController/<DeletUser>d__11": {
         "System.Void CountryApi.Controllers.VisitController/<DeletUser>d__11::MoveNext()": {
           "Lines": {
-            "87": 2,
-            "88": 2,
-            "89": 2,
-            "90": 1,
-            "91": 1,
-            "93": 1,
-            "94": 2
+            "164": 2,
+            "166": 2,
+            "167": 2,
+            "168": 2,
+            "169": 1,
+            "170": 1,
+            "172": 1,
+            "174": 0,
+            "175": 0,
+            "176": 0,
+            "178": 2
           },
           "Branches": [
             {
-              "Line": 89,
-              "Offset": 157,
-              "EndOffset": 159,
+              "Line": 168,
+              "Offset": 178,
+              "EndOffset": 180,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 1
             },
             {
-              "Line": 89,
-              "Offset": 157,
-              "EndOffset": 178,
+              "Line": 168,
+              "Offset": 178,
+              "EndOffset": 200,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
@@ -6474,27 +6783,31 @@
       "CountryApi.Controllers.VisitController/<AddCountryVisitToUser>d__12": {
         "System.Void CountryApi.Controllers.VisitController/<AddCountryVisitToUser>d__12::MoveNext()": {
           "Lines": {
-            "99": 2,
-            "100": 2,
-            "101": 2,
-            "102": 2,
-            "103": 2,
-            "105": 0,
-            "106": 2
+            "183": 2,
+            "185": 2,
+            "186": 2,
+            "187": 2,
+            "188": 2,
+            "189": 2,
+            "191": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "197": 2
           },
           "Branches": [
             {
-              "Line": 101,
-              "Offset": 175,
-              "EndOffset": 177,
+              "Line": 187,
+              "Offset": 184,
+              "EndOffset": 186,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 2
             },
             {
-              "Line": 101,
-              "Offset": 175,
-              "EndOffset": 202,
+              "Line": 187,
+              "Offset": 184,
+              "EndOffset": 211,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 0
@@ -6505,83 +6818,147 @@
       "CountryApi.Controllers.VisitController/<GetAllUsersThatVisitedCountry>d__13": {
         "System.Void CountryApi.Controllers.VisitController/<GetAllUsersThatVisitedCountry>d__13::MoveNext()": {
           "Lines": {
-            "111": 3,
-            "112": 3,
-            "113": 3
+            "202": 3,
+            "204": 3,
+            "205": 3,
+            "206": 3,
+            "207": 1,
+            "208": 1,
+            "210": 2,
+            "212": 0,
+            "213": 0,
+            "214": 0,
+            "216": 3
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 206,
+              "Offset": 178,
+              "EndOffset": 180,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 206,
+              "Offset": 178,
+              "EndOffset": 200,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
         }
       },
       "CountryApi.Controllers.VisitController/<AddCityVisitToUser>d__14": {
         "System.Void CountryApi.Controllers.VisitController/<AddCityVisitToUser>d__14::MoveNext()": {
           "Lines": {
-            "118": 2,
-            "119": 2,
-            "120": 2,
-            "121": 2,
-            "122": 2,
-            "124": 0,
-            "125": 2
+            "221": 2,
+            "223": 2,
+            "224": 2,
+            "225": 2,
+            "226": 2,
+            "227": 2,
+            "229": 0,
+            "231": 0,
+            "232": 0,
+            "233": 0,
+            "235": 2
           },
           "Branches": [
             {
-              "Line": 120,
-              "Offset": 175,
-              "EndOffset": 177,
+              "Line": 225,
+              "Offset": 184,
+              "EndOffset": 186,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 2
             },
             {
-              "Line": 120,
-              "Offset": 175,
-              "EndOffset": 202,
+              "Line": 225,
+              "Offset": 184,
+              "EndOffset": 211,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 0
             }
           ]
         }
+      },
+      "CountryApi.Controllers.VisitController/<GetAllUsersThatVisitedCity>d__15": {
+        "System.Void CountryApi.Controllers.VisitController/<GetAllUsersThatVisitedCity>d__15::MoveNext()": {
+          "Lines": {
+            "240": 3,
+            "242": 3,
+            "243": 3,
+            "244": 3,
+            "245": 1,
+            "246": 1,
+            "248": 2,
+            "250": 0,
+            "251": 0,
+            "252": 0,
+            "254": 3
+          },
+          "Branches": [
+            {
+              "Line": 244,
+              "Offset": 178,
+              "EndOffset": 180,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 244,
+              "Offset": 178,
+              "EndOffset": 200,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Context\\VisitContext.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Context\\VisitContext.cs": {
       "CountryApi.Context.VisitContext": {
         "Microsoft.EntityFrameworkCore.DbSet`1<CountryApi.Models.User> CountryApi.Context.VisitContext::get_Users()": {
           "Lines": {
-            "26": 149
+            "26": 186
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<CountryApi.Models.Country> CountryApi.Context.VisitContext::get_Countries()": {
           "Lines": {
-            "27": 132
+            "27": 175
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<CountryApi.Models.City> CountryApi.Context.VisitContext::get_Cities()": {
           "Lines": {
-            "28": 133
+            "28": 172
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<CountryApi.Models.UserCountry> CountryApi.Context.VisitContext::get_UserCountries()": {
           "Lines": {
-            "29": 125
+            "29": 160
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<CountryApi.Models.UserCity> CountryApi.Context.VisitContext::get_UserCities()": {
           "Lines": {
-            "30": 125
+            "30": 160
           },
           "Branches": []
         },
         "System.Void CountryApi.Context.VisitContext::OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)": {
           "Lines": {
-            "40": 30,
-            "41": 60,
-            "42": 30,
-            "43": 30
+            "40": 42,
+            "41": 84,
+            "42": 42,
+            "43": 42
           },
           "Branches": []
         },
@@ -6758,33 +7135,26 @@
             "216": 1,
             "217": 1,
             "218": 1,
-            "219": 1,
-            "220": 1,
-            "221": 1,
-            "222": 1,
-            "223": 1,
-            "224": 1,
-            "225": 1,
-            "226": 1
+            "219": 1
           },
           "Branches": []
         },
         "System.Void CountryApi.Context.VisitContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<CountryApi.Context.VisitContext>,Microsoft.Extensions.Options.IOptions`1<CountryApi.Configuration.Connectionstrings>)": {
           "Lines": {
-            "34": 125,
-            "35": 125,
-            "36": 125,
-            "37": 125
+            "34": 160,
+            "35": 160,
+            "36": 160,
+            "37": 160
           },
           "Branches": []
         }
       }
     },
-    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Configuration\\Connectionstrings.cs": {
+    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\Configuration\\Connectionstrings.cs": {
       "CountryApi.Configuration.Connectionstrings": {
         "System.String CountryApi.Configuration.Connectionstrings::get_SQL()": {
           "Lines": {
-            "7": 32
+            "7": 44
           },
           "Branches": []
         }

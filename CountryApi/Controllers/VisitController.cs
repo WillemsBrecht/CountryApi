@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using CountryApi.Models;
 using CountryApi.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CountryApi.Controllers
@@ -26,102 +27,230 @@ namespace CountryApi.Controllers
         [Route("countries")]
         public async Task<ActionResult<List<Country>>> GetAllCountries(bool cities = false)
         {
-            return await this._countryService.GetAllCountries(cities);
+            try
+            {
+                return await this._countryService.GetAllCountries(cities);
+            }
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpPost]
         [Route("country")]
-        public async Task<ActionResult<Country>> AddCountry(Country countryToAdd)
+        public async Task<ActionResult> AddCountry(Country countryToAdd)
         {
-            return await this._countryService.AddCountry(countryToAdd);
+            try
+            {
+                CountryResult result = await this._countryService.AddCountry(countryToAdd);
+                if (result.Success == false)
+                {
+                    return new BadRequestObjectResult(result.Message);
+                }
+
+                return new OkObjectResult(result.OneCountry);
+            }
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpGet]
         [Route("cities")]
         public async Task<ActionResult<List<City>>> GetAllCities(string country = "")
         {
-            return await this._countryService.GetAllCities(country);
+            try
+            {
+                return await this._countryService.GetAllCities(country);
+            }
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpPost]
         [Route("city")]
-        public async Task<ActionResult<City>> AddCity(City cityToAdd)
+        public async Task<ActionResult> AddCity(City cityToAdd)
         {
-            return await this._countryService.AddCity(cityToAdd);
+            try
+            {
+                CityResult result = await this._countryService.AddCity(cityToAdd);
+                if (result.Success == false)
+                {
+                    return new BadRequestObjectResult(result.Message);
+                }
+
+                return new OkObjectResult(result.OneCity);
+            }
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpPost]
         [Route("user")]
         public async Task<ActionResult> AddUser(User userToAdd)
         {
-            User user = await this._userService.AddUser(userToAdd);
-            if (user.UserId == Guid.Parse("00000000-0000-0000-0000-000000000000"))
+            try
             {
-                return new BadRequestObjectResult("User already exists");
+                User user = await this._userService.AddUser(userToAdd);
+                if (user.UserId == Guid.Parse("00000000-0000-0000-0000-000000000000"))
+                {
+                    return new BadRequestObjectResult("User already exists");
+                }
+                return new OkObjectResult(user);
             }
-            return new OkObjectResult(user);
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpGet]
         [Route("users")]
         public async Task<ActionResult<List<User>>> GetAllUsers()
         {
-            return await this._userService.GetAllUsers();
+            try
+            {
+                return await this._userService.GetAllUsers();   
+            }
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpGet]
         [Route("user")]
-        public async Task<ActionResult<User>> GetUserByUsername(string username, bool countries = false, bool cities = false)
+        public async Task<ActionResult<User>> GetUserByUsername(string username = "", bool countries = false, bool cities = false)
         {
-            return await this._userService.GetUserByUsername(username, countries, cities);
+            try
+            {
+                return await this._userService.GetUserByUsername(username, countries, cities);  
+            }
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpPut]
         [Route("user")]
-        public async Task<ActionResult<User>> UpdateUser(User userToUpdate){
-            return await this._userService.UpdateUser(userToUpdate);
+        public async Task<ActionResult<User>> UpdateUser(User userToUpdate)
+        {
+            try
+            {
+                UserResult result = await this._userService.UpdateUser(userToUpdate);
+                if (result.Success == false)
+                {
+                    return new BadRequestObjectResult(result.Message);
+                }
+
+                return new OkObjectResult(result.OneUser);
+            }
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpDelete]
         [Route("user")]
-        public async Task<ActionResult<string>> DeletUser(Guid userId){
-            bool result = await this._userService.DeleteUser(userId);
-            if (result == false)
+        public async Task<ActionResult> DeletUser(Guid userId)
+        {
+            try
             {
-                return new BadRequestObjectResult("No user was found");
+                UserResult result = await this._userService.DeleteUser(userId);
+                if (result.Success == false)
+                {
+                    return new BadRequestObjectResult(result.Message);
+                }
+                return new OkObjectResult(result.Message);   
             }
-            return new OkObjectResult("User has been removed");
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpPost]
         [Route("visit/country")]
         public async Task<ActionResult<string>> AddCountryVisitToUser(string username, string ISOCode)
         {
-            Result result = await this._userService.addUserVisitedCountry(username, ISOCode);
-            if (result.Success == false)
+            try
             {
-                return new BadRequestObjectResult(result.Message);
+                Result result = await this._userService.addUserVisitedCountry(username, ISOCode);
+                if (result.Success == false)
+                {
+                    return new BadRequestObjectResult(result.Message);
+                }
+                return new OkObjectResult(result.Message);
             }
-            return new OkObjectResult(result.Message);
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpGet]
         [Route("visit/country")]
-        public async Task<ActionResult<List<User>>> GetAllUsersThatVisitedCountry(string country)
+        public async Task<ActionResult> GetAllUsersThatVisitedCountry(string country)
         {
-            return await this._userService.GetAllUsersThatVisitedCountry(country);
+            try
+            {
+                UserResult result = await this._userService.GetAllUsersThatVisitedCountry(country);
+                if (result.Success == false)
+                {
+                    return new BadRequestObjectResult(result.Message);
+                }
+                return new OkObjectResult(result.userList);
+            }
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpPost]
         [Route("visit/city")]
         public async Task<ActionResult<string>> AddCityVisitToUser(string username, Guid cityId)
         {
-            Result result = await this._userService.addUserVisitedCity(username, cityId);
-            if (result.Success == false)
+            try
             {
-                return new BadRequestObjectResult(result.Message);
+                Result result = await this._userService.addUserVisitedCity(username, cityId);
+                if (result.Success == false)
+                {
+                    return new BadRequestObjectResult(result.Message);
+                }
+                return new OkObjectResult(result.Message);
             }
-            return new OkObjectResult(result.Message);
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpGet]
+        [Route("visit/city")]
+        public async Task<ActionResult> GetAllUsersThatVisitedCity(Guid cityId)
+        {
+            try
+            {
+                UserResult result = await this._userService.GetAllUsersThatVisitedCity(cityId);
+                if (result.Success == false)
+                {
+                    return new BadRequestObjectResult(result.Message);
+                }
+                return new OkObjectResult(result.userList);
+            }
+            catch (System.Exception)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }

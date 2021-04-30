@@ -12,7 +12,7 @@ namespace CountryApi.Repositories
     public interface ICountryRepository
     {
         Task<Country> AddCountry(Country countryToAdd);
-        Task<bool> CheckIfCountryExists(Country countrytoCheck);
+        Task<bool> CheckIfCountryExists(string ISOCode);
         Task<List<Country>> GetAllCountries(bool showCities);
         Task<Country> GetCountryByISOCode(string ISOCode);
     }
@@ -59,11 +59,11 @@ namespace CountryApi.Repositories
             }
         }
 
-        public async Task<bool> CheckIfCountryExists(Country countrytoCheck)
+        public async Task<bool> CheckIfCountryExists(string ISOCode)
         {
             try
             {
-                return await this._context.Countries.Where(country => (country.ISOCode == countrytoCheck.ISOCode)).Include(country => country.Cities).AnyAsync();
+                return await this._context.Countries.Where(country => (country.ISOCode == ISOCode)).Include(country => country.Cities).AnyAsync();
             }
             catch (System.Exception)
             {

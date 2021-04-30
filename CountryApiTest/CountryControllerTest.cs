@@ -82,10 +82,26 @@ namespace CountryApiTest
                 Name = "Russia",
                 Population = 316000000
             };
-
+            
             string jsonCountry = JsonConvert.SerializeObject(countryToAdd);
             var response = await this._client.PostAsync("/api/country", new StringContent(jsonCountry, Encoding.UTF8, "application/json"));
             response.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+
+        [Fact]
+        public async Task AddExisitingCountry()
+        {
+            Country countryToAdd = new Country()
+            {
+                ISOCode = "BE",
+                Name = "Belgium",
+                Population = 11000000
+            };
+            
+            string jsonCountry = JsonConvert.SerializeObject(countryToAdd);
+            var response = await this._client.PostAsync("/api/country", new StringContent(jsonCountry, Encoding.UTF8, "application/json"));
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            Assert.True(string.Equals("Country already exists.", await response.Content.ReadAsStringAsync()));
         }
 
         [Fact]
@@ -93,14 +109,48 @@ namespace CountryApiTest
         {
             City cityToAdd = new City()
             {
-                Name = "Moscow",
-                Population = 12000000,
-                CountryISOCode = "RU"
+                Name = "Inverness",
+                Population = 1200000,
+                CountryISOCode = "UK"
             };
 
             string jsonCity = JsonConvert.SerializeObject(cityToAdd);
             var response = await this._client.PostAsync("/api/city", new StringContent(jsonCity, Encoding.UTF8, "application/json"));
             response.StatusCode.Should().Be(HttpStatusCode.OK);
+            cityToAdd = JsonConvert.DeserializeObject<City>(await response.Content.ReadAsStringAsync());
+           Assert.False(cityToAdd.CityId.Equals(Guid.Parse("00000000-0000-0000-0000-000000000000")));
+        }
+
+        [Fact]
+        public async Task AddCityUnknownCountry()
+        {
+            City cityToAdd = new City()
+            {
+                Name = "MOON_BASE",
+                Population = 12000000,
+                CountryISOCode = "MOON"
+            };
+
+            string jsonCity = JsonConvert.SerializeObject(cityToAdd);
+            var response = await this._client.PostAsync("/api/city", new StringContent(jsonCity, Encoding.UTF8, "application/json"));
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            Assert.True(string.Equals("Country doesn't exist.", await response.Content.ReadAsStringAsync()));
+        }
+
+        [Fact]
+        public async Task AddCityAlreadyExists()
+        {
+            City cityToAdd = new City()
+            {
+                Name = "Bruges",
+                Population = 12000000,
+                CountryISOCode = "BE"
+            };
+
+            string jsonCity = JsonConvert.SerializeObject(cityToAdd);
+            var response = await this._client.PostAsync("/api/city", new StringContent(jsonCity, Encoding.UTF8, "application/json"));
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            Assert.True(string.Equals("City already exist.", await response.Content.ReadAsStringAsync()));
         }
 
         [Fact]
@@ -203,7 +253,6 @@ namespace CountryApiTest
         [Fact]
         public async Task AddUpdateAndDeleteUser()
         {
-            User updatedUser;
             User userToAdd = new User()
             {
 
@@ -215,24 +264,43 @@ namespace CountryApiTest
                 VisitedCountries = new List<UserCountry>()
             };
 
-            string jsonUser = JsonConvert.SerializeObject(userToAdd);
-            var response = await this._client.PostAsync("/api/user", new StringContent(jsonUser, Encoding.UTF8, "application/json"));
-            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            // Add user
+            userToAdd = await this.AddUser(userToAdd);
+            Assert.False(userToAdd.UserId.Equals(Guid.Parse("00000000-0000-0000-0000-000000000000")));
 
-            userToAdd = JsonConvert.DeserializeObject<User>(await response.Content.ReadAsStringAsync());
-            Assert.NotNull(userToAdd);
-
+            // Update user
             string oldMail = userToAdd.Mail;
             userToAdd.Mail = "Test2@Test.test";
-            string updateJsonUser = JsonConvert.SerializeObject(userToAdd);
+            Assert.False(string.Equals(oldMail, await this.UpdateUser(userToAdd)));
+
+            // Delete user
+            Assert.True(await this.DeleteUser(userToAdd.UserId));
+        }
+
+        private async Task<string> UpdateUser(User userToUpdate)
+        {
+            User updatedUser;
+            string updateJsonUser = JsonConvert.SerializeObject(userToUpdate);
             var updateResponse = await this._client.PutAsync("/api/user", new StringContent(updateJsonUser, Encoding.UTF8, "application/json"));
             updatedUser = JsonConvert.DeserializeObject<User>(await updateResponse.Content.ReadAsStringAsync());
             updateResponse.StatusCode.Should().Be(HttpStatusCode.OK);
-            Assert.False(string.Equals(oldMail, updatedUser.Mail));
-            
-            var deleteResponse = await this._client.DeleteAsync("/api/user?userId="+userToAdd.UserId);
+            return updatedUser.Mail;
+        }
+
+        private async Task<User> AddUser(User userToAdd)
+        {
+            string jsonUser = JsonConvert.SerializeObject(userToAdd);
+            var response = await this._client.PostAsync("/api/user", new StringContent(jsonUser, Encoding.UTF8, "application/json"));
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            userToAdd = JsonConvert.DeserializeObject<User>(await response.Content.ReadAsStringAsync());
+            return userToAdd;
+        }
+
+        private async Task<bool> DeleteUser(Guid userId)
+        {
+            var deleteResponse = await this._client.DeleteAsync("/api/user?userId="+userId);
             deleteResponse.StatusCode.Should().Be(HttpStatusCode.OK);
-            Assert.True(string.Equals("User has been removed", await deleteResponse.Content.ReadAsStringAsync()));
+            return string.Equals("User has been removed", await deleteResponse.Content.ReadAsStringAsync());
         }
 
         [Theory]
@@ -247,13 +315,32 @@ namespace CountryApiTest
         }
 
         [Theory]
+        [InlineData("d9fc3bca-9c0f-44b1-99be-0d8a5863a6ec")]
+        [InlineData("dbba6527-4ff7-4aee-acc6-be8dac6ce333")]
+        public async Task GetUsersThatVisitCity(Guid cityId)
+        {
+            var response = await this._client.GetAsync("/api/visit/city?cityId="+cityId);
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            List<User> users = JsonConvert.DeserializeObject<List<User>>(await response.Content.ReadAsStringAsync());
+            Assert.True(users.Count > 0);
+        }
+
+        [Theory]
+        [InlineData("00000000-0000-0000-0000-000000000000")]
+        public async Task GetUsersThatVisitUnknowCity(Guid cityId)
+        {
+            var response = await this._client.GetAsync("/api/visit/city?cityId="+cityId);
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            Assert.True(string.Equals("City doesn't exist.", await response.Content.ReadAsStringAsync()));
+        }
+
+        [Theory]
         [InlineData("MOON")]
         public async Task GetUsersThatVisitsUnknowCountry(string ISOCode)
         {
             var response = await this._client.GetAsync("/api/visit/country?country="+ISOCode);
-            response.StatusCode.Should().Be(HttpStatusCode.OK);
-            List<User> users = JsonConvert.DeserializeObject<List<User>>(await response.Content.ReadAsStringAsync());
-            Assert.True(users.Count == 0);
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            Assert.True(string.Equals("Country doesn't exist.", await response.Content.ReadAsStringAsync()));
         }
 
         [Theory]

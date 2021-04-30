@@ -12,11 +12,12 @@ namespace CountryApi.Services
         Task<User> AddUser(User userToAdd);
         Task<Result> addUserVisitedCity(string username, Guid cityId);
         Task<Result> addUserVisitedCountry(string username, string ISOCode);
-        Task<bool> DeleteUser(Guid userId);
+        Task<UserResult> DeleteUser(Guid userId);
         Task<List<User>> GetAllUsers();
-        Task<List<User>> GetAllUsersThatVisitedCountry(string ISOCode);
+        Task<UserResult> GetAllUsersThatVisitedCity(Guid cityId);
+        Task<UserResult> GetAllUsersThatVisitedCountry(string ISOCode);
         Task<User> GetUserByUsername(string username, bool showCountries, bool showCities);
-        Task<User> UpdateUser(User userToUpdate);
+        Task<UserResult> UpdateUser(User userToUpdate);
     }
 
     public class UserService : IUserService
@@ -32,118 +33,231 @@ namespace CountryApi.Services
 
         public async Task<User> AddUser(User userToAdd)
         {
-            if (await this._userRepo.CheckIfUserExists(userToAdd))
+            try
             {
-                return userToAdd;
-            }
+                if (await this._userRepo.CheckIfUserExists(userToAdd))
+                {
+                    return userToAdd;
+                }
 
-            userToAdd.UserId = Guid.NewGuid();
-            userToAdd.VisitedCountries = this.FillUserCountryList(userToAdd.VisitedCountries, userToAdd.UserId);
-            userToAdd.VisitedCities = this.FillUserCityList(userToAdd.VisitedCities, userToAdd.UserId);
-            return await this._userRepo.AddUser(userToAdd);
+                userToAdd.UserId = Guid.NewGuid();
+                userToAdd.VisitedCountries = this.FillUserCountryList(userToAdd.VisitedCountries, userToAdd.UserId);
+                userToAdd.VisitedCities = this.FillUserCityList(userToAdd.VisitedCities, userToAdd.UserId);
+                return await this._userRepo.AddUser(userToAdd);
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
         }
 
         private List<UserCountry> FillUserCountryList(List<UserCountry> countryList, Guid userId)
         {
-            List<UserCountry> countries = new List<UserCountry>();
-            foreach (var country in countryList)
+            try
             {
-                countries.Add(new UserCountry() { UserId = userId, ISOCode = country.ISOCode });
+                List<UserCountry> countries = new List<UserCountry>();
+                foreach (var country in countryList)
+                {
+                    countries.Add(new UserCountry() { UserId = userId, ISOCode = country.ISOCode });
+                }
+                return countries;
             }
-            return countries;
+            catch (System.Exception)
+            {   
+                throw;
+            }
         }
 
         private List<UserCity> FillUserCityList(List<UserCity> cityList, Guid userId)
         {
-            List<UserCity> cities = new List<UserCity>();
-            foreach (var city in cityList)
+            try
             {
-                cities.Add(new UserCity() { UserId = userId, CityId = city.CityId });
+                List<UserCity> cities = new List<UserCity>();
+                foreach (var city in cityList)
+                {
+                    cities.Add(new UserCity() { UserId = userId, CityId = city.CityId });
+                }
+                return cities;
             }
-            return cities;
+            catch (System.Exception)
+            {   
+                throw;
+            }
         }
 
         public async Task<List<User>> GetAllUsers()
         {
-            return await this._userRepo.GetAllUsers();
+            try
+            {
+                return await this._userRepo.GetAllUsers();   
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
         }
 
         public async Task<User> GetUserByUsername(string username, bool showCountries, bool showCities)
         {
-            return await this._userRepo.GetUserByUsername(username, showCountries, showCities);
+            try
+            {
+                return await this._userRepo.GetUserByUsername(username, showCountries, showCities);
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
         }
 
         public async Task<Result> addUserVisitedCountry(string username, string ISOCode)
         {
-            Country countryToCheck = new Country() { ISOCode = ISOCode };
-            User userToCheck = await this._userRepo.GetUserByUsername(username, true, false);
-            Result result = new Result();
-            if ((await this._countryService.CheckIfCountryExists(countryToCheck) == false) || (await this._userRepo.CheckIfUserExists(userToCheck) == false))
+            try
             {
-                result.Success = false;
-                result.Message = "User or country doesn't exist";
-                return result;
-            }
-
-            foreach (var visited in userToCheck.VisitedCountries)
-            {
-                if (visited.ISOCode == ISOCode)
+                Country countryToCheck = new Country() { ISOCode = ISOCode };
+                User userToCheck = await this._userRepo.GetUserByUsername(username, true, false);
+                Result result = new Result();
+                if ((await this._countryService.CheckIfCountryExists(countryToCheck.ISOCode) == false) || (await this._userRepo.CheckIfUserExists(userToCheck) == false))
                 {
                     result.Success = false;
-                    result.Message = "User has already visited this country";
+                    result.Message = "User or country doesn't exist";
                     return result;
                 }
+
+                foreach (var visited in userToCheck.VisitedCountries)
+                {
+                    if (visited.ISOCode == ISOCode)
+                    {
+                        result.Success = false;
+                        result.Message = "User has already visited this country";
+                        return result;
+                    }
+                }
+                result.Success = true;
+                result.Message = await this._userRepo.AddUserVisitedCountry(userToCheck, countryToCheck);
+                return result;
             }
-            result.Success = true;
-            result.Message = await this._userRepo.AddUserVisitedCountry(userToCheck, countryToCheck);
-            return result;
+            catch (System.Exception)
+            {   
+                throw;
+            }
         }
 
-        public async Task<List<User>> GetAllUsersThatVisitedCountry(string ISOCode)
+        public async Task<UserResult> GetAllUsersThatVisitedCountry(string ISOCode)
         {
-            return await this._userRepo.GetAllUsersThatVisitedCountry(ISOCode);
+            try
+            {
+                UserResult result;
+                bool test = await this._countryService.CheckIfCountryExists(ISOCode);
+                if (test == false)
+                {
+                    result = new UserResult(false, "Country doesn't exist.");
+                    return result;
+                }
+
+                result = new UserResult(true);
+                result.userList = await this._userRepo.GetAllUsersThatVisitedCountry(ISOCode);
+                return result;
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<UserResult> GetAllUsersThatVisitedCity(Guid cityId)
+        {
+            try
+            {
+                UserResult result;
+                City city = await this._countryService.GetCityById(cityId);
+                if (city == null)
+                {
+                    result = new UserResult(false, "City doesn't exist.");
+                    return result;
+                }
+
+                result = new UserResult(true);
+                result.userList = await this._userRepo.GetAllUsersThatVisitedCity(city.CityId);
+                return result;
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
         }
 
         public async Task<Result> addUserVisitedCity(string username, Guid cityId)
         {
-            City cityToCheck = await this._countryService.GetCityById(cityId);
-            User userToCheck = await this._userRepo.GetUserByUsername(username, false, true);
-            Result result = new Result();
-
-            if ((cityToCheck == null || await this._countryService.CheckIfCityExists(cityToCheck) == false) || (await this._userRepo.CheckIfUserExists(userToCheck) == false))
+            try
             {
-                result.Success = false;
-                result.Message = "User or city doesn't exist";
-                return result;
-            }
+                City cityToCheck = await this._countryService.GetCityById(cityId);
+                User userToCheck = await this._userRepo.GetUserByUsername(username, false, true);
+                Result result = new Result();
 
-            foreach (var city in userToCheck.VisitedCities)
-            {
-                if (city.CityId == cityId)
+                if ((cityToCheck == null) || (await this._userRepo.CheckIfUserExists(userToCheck) == false))
                 {
                     result.Success = false;
-                    result.Message = "User has already visited this city";
+                    result.Message = "User or city doesn't exist";
                     return result;
-                } 
+                }
+
+                foreach (var city in userToCheck.VisitedCities)
+                {
+                    if (city.CityId == cityId)
+                    {
+                        result.Success = false;
+                        result.Message = "User has already visited this city";
+                        return result;
+                    }
+                }
+                result.Success = true;
+                result.Message = await this._userRepo.AddUserVisitedCity(userToCheck, cityToCheck);
+                return result;
             }
-            result.Success = true;
-            result.Message = await this._userRepo.AddUserVisitedCity(userToCheck, cityToCheck);
-            return result;
-        }
-
-        public async Task<User> UpdateUser(User userToUpdate)
-        {
-            return await this._userRepo.UpdateUser(userToUpdate);
-        }
-
-        public async Task<bool> DeleteUser(Guid userId)
-        {
-            User userToDelete = await this._userRepo.GetUserById(userId);
-            if (userToDelete == null)
+            catch (System.Exception)
             {
-                return false;
+                throw;
             }
-            return await this._userRepo.DeleteUser(userToDelete);
+        }
+
+        public async Task<UserResult> UpdateUser(User userToUpdate)
+        {
+            try
+            {
+                UserResult result;
+                if (await this._userRepo.GetUserById(userToUpdate.UserId) != null)
+                {
+                    result = new UserResult(true);
+                    result.OneUser = await this._userRepo.UpdateUser(userToUpdate);
+                    return result;
+                }
+                result = new UserResult(false, "User doesn't exist");
+                return result;   
+            }
+            catch (System.Exception)
+            {   
+                throw;
+            }
+        }
+
+        public async Task<UserResult> DeleteUser(Guid userId)
+        {
+            try
+            {
+                UserResult result;
+                User userToDelete = await this._userRepo.GetUserById(userId);
+                if (userToDelete == null)
+                {
+                    result = new UserResult(false, "No user was found");
+                    return result;
+                }
+                result = new UserResult(true, await this._userRepo.DeleteUser(userToDelete));
+                return result;
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
         }
     }
 }

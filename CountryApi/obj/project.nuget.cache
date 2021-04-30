@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2BogcnPlwndAcimHjvMkhq6/+fDgS/9XNUHh+9lcaitE3Ia7x3unGE35z5UcG+fDwl0kIO7VI5IzjlI7WyzAJA==",
+  "dgSpecHash": "ftDUaF7eGdXKKQgh7SfxidbY26U9BVKLizWfDnL5f5aAcXuEJHo0BNod3QimlI0Us3VTk2lnr8CA4DYAIRa/Ow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj",
+  "projectFilePath": "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\brech\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\brech\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.5\\microsoft.aspnetcore.authentication.jwtbearer.5.0.5.nupkg.sha512",

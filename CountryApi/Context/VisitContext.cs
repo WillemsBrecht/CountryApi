@@ -156,13 +156,6 @@ namespace CountryApi.Context
                 {
                     CityId = Guid.NewGuid(),
                     Name = "Calais",
-                    Population = 72929,
-                    CountryISOCode = "FR"
-                },
-                new City()
-                {
-                    CityId = Guid.NewGuid(),
-                    Name = "Calais",
                     Population = 868277,
                     CountryISOCode = "FR"
                 },

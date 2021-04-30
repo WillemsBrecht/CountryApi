@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\CountryApiTest.csproj": {}
+    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\CountryApiTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\CountryApiTest.csproj": {
+    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\CountryApiTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\CountryApiTest.csproj",
+        "projectUniqueName": "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\CountryApiTest.csproj",
         "projectName": "CountryApiTest",
-        "projectPath": "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\CountryApiTest.csproj",
+        "projectPath": "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\CountryApiTest.csproj",
         "packagesPath": "C:\\Users\\brech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\obj\\",
+        "outputPath": "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApiTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brech\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj": {
-                "projectPath": "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj"
+              "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj": {
+                "projectPath": "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj"
               }
             }
           }
@@ -96,14 +96,14 @@
         }
       }
     },
-    "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj": {
+    "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj",
+        "projectUniqueName": "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj",
         "projectName": "CountryApi",
-        "projectPath": "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj",
+        "projectPath": "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\CountryApi.csproj",
         "packagesPath": "C:\\Users\\brech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\obj\\",
+        "outputPath": "c:\\Users\\brech\\Documents\\Backend development\\CountryApi\\CountryApi\\CountryApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brech\\AppData\\Roaming\\NuGet\\NuGet.Config"

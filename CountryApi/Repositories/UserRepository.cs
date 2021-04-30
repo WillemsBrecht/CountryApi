@@ -16,8 +16,9 @@ namespace CountryApi.Repositories
         Task<string> AddUserVisitedCity(User selectedUser, City cityToAdd);
         Task<string> AddUserVisitedCountry(User selectedUser, Country countryToAdd);
         Task<bool> CheckIfUserExists(User userToCheck);
-        Task<bool> DeleteUser(User userToRemove);
+        Task<string> DeleteUser(User userToRemove);
         Task<List<User>> GetAllUsers();
+        Task<List<User>> GetAllUsersThatVisitedCity(Guid cityId);
         Task<List<User>> GetAllUsersThatVisitedCountry(string ISOCode);
         Task<User> GetUserById(Guid userIdToCheck);
         Task<User> GetUserByUsername(string userName, bool showCountries, bool showCities);
@@ -110,7 +111,18 @@ namespace CountryApi.Repositories
             }
             catch (System.Exception)
             {
+                throw;
+            }
+        }
 
+        public async Task<List<User>> GetAllUsersThatVisitedCity(Guid cityId)
+        {
+            try
+            {
+                return await this._context.Users.Where(user => (user.VisitedCities.Any(visited => visited.CityId == cityId))).ToListAsync();
+            }
+            catch (System.Exception)
+            {
                 throw;
             }
         }
@@ -125,7 +137,6 @@ namespace CountryApi.Repositories
             }
             catch (System.Exception)
             {
-
                 throw;
             }
         }
@@ -160,13 +171,13 @@ namespace CountryApi.Repositories
             }
         }
 
-        public async Task<bool> DeleteUser(User userToRemove)
+        public async Task<string> DeleteUser(User userToRemove)
         {
             try
             {
                 this._context.Users.Remove(userToRemove);
                 await this._context.SaveChangesAsync();
-                return true;
+                return "User has been removed";
             }
             catch (System.Exception)
             {
