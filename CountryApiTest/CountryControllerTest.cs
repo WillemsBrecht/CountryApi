@@ -271,7 +271,7 @@ namespace CountryApiTest
             var response = await this._client.PostAsync("/api/user", new StringContent(jsonUser, Encoding.UTF8, "application/json"));
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
             string result = await response.Content.ReadAsStringAsync();
-            Assert.True(string.Equals("City and/or country do not exist", result));
+            Assert.True(string.Equals("City and/or country does not exist", result));
         }
 
         [Fact]
@@ -295,7 +295,7 @@ namespace CountryApiTest
             var response = await this._client.PostAsync("/api/user", new StringContent(jsonUser, Encoding.UTF8, "application/json"));
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
             string result = await response.Content.ReadAsStringAsync();
-            Assert.True(string.Equals("City and/or country do not exist", result));
+            Assert.True(string.Equals("City and/or country does not exist", result));
         }
 
         [Fact]

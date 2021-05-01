@@ -48,7 +48,7 @@ namespace CountryApi.Services
 
                 if (await this.CheckUserCity(userToAdd.VisitedCities) == false || await this.CheckUserCountry(userToAdd.VisitedCountries) == false)
                 {
-                    result = new UserResult(false, "City and/or country do not exist");
+                    result = new UserResult(false, "City and/or country does not exist");
                     return result;
                 }
                 result = new UserResult(true);
