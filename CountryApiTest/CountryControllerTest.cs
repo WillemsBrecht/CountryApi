@@ -251,6 +251,54 @@ namespace CountryApiTest
         }
 
         [Fact]
+        public async Task AddUserUnkownCity()
+        {
+            User userToAdd = new User()
+            {
+
+                UserName = "TEST",
+                FirstName = "TEST",
+                LastName = "TEST",
+                Mail = "TEST@tt.com",
+                VisitedCities = new List<UserCity>()
+                {
+                    new UserCity() { CityId = Guid.Parse("11111111-1111-1111-1111-111111111111") }
+                },
+                VisitedCountries = new List<UserCountry>()
+            };
+
+            string jsonUser = JsonConvert.SerializeObject(userToAdd);
+            var response = await this._client.PostAsync("/api/user", new StringContent(jsonUser, Encoding.UTF8, "application/json"));
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            string result = await response.Content.ReadAsStringAsync();
+            Assert.True(string.Equals("City and/or country do not exist", result));
+        }
+
+        [Fact]
+        public async Task AddUserUnkownCountry()
+        {
+            User userToAdd = new User()
+            {
+
+                UserName = "TEST",
+                FirstName = "TEST",
+                LastName = "TEST",
+                Mail = "TEST@tt.com",
+                VisitedCities = new List<UserCity>(),
+                VisitedCountries = new List<UserCountry>()
+                {
+                    new UserCountry() { ISOCode = "MOON" }
+                }
+            };
+
+            string jsonUser = JsonConvert.SerializeObject(userToAdd);
+            var response = await this._client.PostAsync("/api/user", new StringContent(jsonUser, Encoding.UTF8, "application/json"));
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            string result = await response.Content.ReadAsStringAsync();
+            Assert.True(string.Equals("City and/or country do not exist", result));
+        }
+
+        [Fact]
         public async Task AddUpdateAndDeleteUser()
         {
             User userToAdd = new User()

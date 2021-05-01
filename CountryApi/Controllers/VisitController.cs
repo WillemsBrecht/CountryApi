@@ -97,12 +97,12 @@ namespace CountryApi.Controllers
         {
             try
             {
-                User user = await this._userService.AddUser(userToAdd);
-                if (user.UserId == Guid.Parse("00000000-0000-0000-0000-000000000000"))
+                UserResult result = await this._userService.AddUser(userToAdd);
+                if (result.Success == false)
                 {
-                    return new BadRequestObjectResult("User already exists");
+                    return new BadRequestObjectResult(result.Message);
                 }
-                return new OkObjectResult(user);
+                return new OkObjectResult(result.OneUser);
             }
             catch (System.Exception)
             {

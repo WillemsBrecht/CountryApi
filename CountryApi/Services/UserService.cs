@@ -9,7 +9,7 @@ namespace CountryApi.Services
 {
     public interface IUserService
     {
-        Task<User> AddUser(User userToAdd);
+        Task<UserResult> AddUser(User userToAdd);
         Task<Result> addUserVisitedCity(string username, Guid cityId);
         Task<Result> addUserVisitedCountry(string username, string ISOCode);
         Task<UserResult> DeleteUser(Guid userId);
@@ -31,24 +31,60 @@ namespace CountryApi.Services
             _countryService = countryService;
         }
 
-        public async Task<User> AddUser(User userToAdd)
+        public async Task<UserResult> AddUser(User userToAdd)
         {
             try
             {
+                UserResult result;
                 if (await this._userRepo.CheckIfUserExists(userToAdd))
                 {
-                    return userToAdd;
+                    result = new UserResult(false, "User already exists");
+                    return result;
                 }
 
                 userToAdd.UserId = Guid.NewGuid();
                 userToAdd.VisitedCountries = this.FillUserCountryList(userToAdd.VisitedCountries, userToAdd.UserId);
                 userToAdd.VisitedCities = this.FillUserCityList(userToAdd.VisitedCities, userToAdd.UserId);
-                return await this._userRepo.AddUser(userToAdd);
+
+                if (await this.CheckUserCity(userToAdd.VisitedCities) == false || await this.CheckUserCountry(userToAdd.VisitedCountries) == false)
+                {
+                    result = new UserResult(false, "City and/or country do not exist");
+                    return result;
+                }
+                result = new UserResult(true);
+                result.OneUser = await this._userRepo.AddUser(userToAdd);
+                return result;
             }
             catch (System.Exception)
             {
                 throw;
             }
+        }
+
+        private async Task<bool> CheckUserCity(List<UserCity> userCities)
+        {
+            bool exists = true;
+            foreach (UserCity city in userCities)
+            {
+                if (await this._countryService.GetCityById(city.CityId) == null)
+                {
+                    exists = false;
+                }
+            }
+            return exists;
+        }
+
+        private async Task<bool> CheckUserCountry(List<UserCountry> userCountries)
+        {
+            bool exists = true;
+            foreach (UserCountry country in userCountries)
+            {
+                if (await this._countryService.CheckIfCountryExists(country.ISOCode) == false)
+                {
+                    exists = false;
+                }
+            }
+            return exists;
         }
 
         private List<UserCountry> FillUserCountryList(List<UserCountry> countryList, Guid userId)
@@ -63,7 +99,7 @@ namespace CountryApi.Services
                 return countries;
             }
             catch (System.Exception)
-            {   
+            {
                 throw;
             }
         }
@@ -80,7 +116,7 @@ namespace CountryApi.Services
                 return cities;
             }
             catch (System.Exception)
-            {   
+            {
                 throw;
             }
         }
@@ -89,7 +125,7 @@ namespace CountryApi.Services
         {
             try
             {
-                return await this._userRepo.GetAllUsers();   
+                return await this._userRepo.GetAllUsers();
             }
             catch (System.Exception)
             {
@@ -137,7 +173,7 @@ namespace CountryApi.Services
                 return result;
             }
             catch (System.Exception)
-            {   
+            {
                 throw;
             }
         }
@@ -232,10 +268,10 @@ namespace CountryApi.Services
                     return result;
                 }
                 result = new UserResult(false, "User doesn't exist");
-                return result;   
+                return result;
             }
             catch (System.Exception)
-            {   
+            {
                 throw;
             }
         }
