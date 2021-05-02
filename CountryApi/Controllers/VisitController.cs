@@ -90,7 +90,7 @@ namespace CountryApi.Controllers
             }
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         [Route("user")]
         public async Task<ActionResult> AddUser(User userToAdd)
@@ -138,7 +138,7 @@ namespace CountryApi.Controllers
             }
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPut]
         [Route("user")]
         public async Task<ActionResult<User>> UpdateUser(User userToUpdate)
@@ -159,7 +159,7 @@ namespace CountryApi.Controllers
             }
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpDelete]
         [Route("user")]
         public async Task<ActionResult> DeletUser(Guid userId)
@@ -179,7 +179,7 @@ namespace CountryApi.Controllers
             }
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         [Route("visit/country")]
         public async Task<ActionResult<string>> AddCountryVisitToUser(string username, string ISOCode)
@@ -218,7 +218,7 @@ namespace CountryApi.Controllers
             }
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         [Route("visit/city")]
         public async Task<ActionResult<string>> AddCityVisitToUser(string username, Guid cityId)
