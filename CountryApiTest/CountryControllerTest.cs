@@ -118,7 +118,7 @@ namespace CountryApiTest
             var response = await this._client.PostAsync("/api/city", new StringContent(jsonCity, Encoding.UTF8, "application/json"));
             response.StatusCode.Should().Be(HttpStatusCode.OK);
             cityToAdd = JsonConvert.DeserializeObject<City>(await response.Content.ReadAsStringAsync());
-           Assert.False(cityToAdd.CityId.Equals(Guid.Parse("00000000-0000-0000-0000-000000000000")));
+            Assert.False(cityToAdd.CityId.Equals(Guid.Parse("00000000-0000-0000-0000-000000000000")));
         }
 
         [Fact]
@@ -296,6 +296,15 @@ namespace CountryApiTest
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
             string result = await response.Content.ReadAsStringAsync();
             Assert.True(string.Equals("City and/or country does not exist", result));
+        }
+
+        [Fact]
+        public async Task TestInternalServerError()
+        {
+            var response = await this._client.GetAsync("/api/cities?country=");
+            response.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
+            Dictionary<string, string> result = JsonConvert.DeserializeObject<Dictionary<string, string>>(await response.Content.ReadAsStringAsync());
+            Assert.True(string.Equals("An error occurred while processing your request.", result["title"]));
         }
 
         [Fact]

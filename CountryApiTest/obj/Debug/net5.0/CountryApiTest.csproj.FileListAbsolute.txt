@@ -424,3 +424,6 @@ C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApiTes
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApiTest\obj\Debug\net5.0\CountryApiTest.pdb
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApiTest\obj\Debug\net5.0\CountryApiTest.genruntimeconfig.cache
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApiTest\bin\Debug\net5.0\CoverletSourceRootsMapping
+c:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApiTest\bin\Debug\net5.0\AutoMapper.dll
+c:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApiTest\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+c:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApiTest\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CountryApi.Controllers
-{
+{ 
     [ApiController]
     [Route("api")]
     public class VisitController: ControllerBase
@@ -22,7 +22,6 @@ namespace CountryApi.Controllers
             _userService = userService;
         }
 
-        // [Authorize]
         [HttpGet]
         [Route("countries")]
         public async Task<ActionResult<List<Country>>> GetAllCountries(bool cities = false)
@@ -91,6 +90,7 @@ namespace CountryApi.Controllers
             }
         }
 
+        //[Authorize]
         [HttpPost]
         [Route("user")]
         public async Task<ActionResult> AddUser(User userToAdd)
@@ -138,6 +138,7 @@ namespace CountryApi.Controllers
             }
         }
 
+        //[Authorize]
         [HttpPut]
         [Route("user")]
         public async Task<ActionResult<User>> UpdateUser(User userToUpdate)
@@ -158,6 +159,7 @@ namespace CountryApi.Controllers
             }
         }
 
+        //[Authorize]
         [HttpDelete]
         [Route("user")]
         public async Task<ActionResult> DeletUser(Guid userId)
@@ -177,6 +179,7 @@ namespace CountryApi.Controllers
             }
         }
 
+        //[Authorize]
         [HttpPost]
         [Route("visit/country")]
         public async Task<ActionResult<string>> AddCountryVisitToUser(string username, string ISOCode)
@@ -215,6 +218,7 @@ namespace CountryApi.Controllers
             }
         }
 
+        //[Authorize]
         [HttpPost]
         [Route("visit/city")]
         public async Task<ActionResult<string>> AddCityVisitToUser(string username, Guid cityId)

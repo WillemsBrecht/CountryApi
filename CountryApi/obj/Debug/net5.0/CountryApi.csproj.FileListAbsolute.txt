@@ -60,3 +60,6 @@ C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\ob
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\obj\Debug\net5.0\CountryApi.pdb
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\obj\Debug\net5.0\CountryApi.genruntimeconfig.cache
 C:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+c:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\AutoMapper.dll
+c:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+c:\Users\brech\Documents\Backend development\CountryApi\CountryApi\CountryApi\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
