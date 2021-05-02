@@ -299,6 +299,28 @@ namespace CountryApiTest
         }
 
         [Fact]
+        public async Task AddUserUnauthorized()
+        {
+            User userToAdd = new User()
+            {
+
+                UserName = "TEST",
+                FirstName = "TEST",
+                LastName = "TEST",
+                Mail = "TEST@tt.com",
+                VisitedCities = new List<UserCity>(),
+                VisitedCountries = new List<UserCountry>()
+                {
+                    new UserCountry() { ISOCode = "MOON" }
+                }
+            };
+
+            string jsonUser = JsonConvert.SerializeObject(userToAdd);
+            var response = await this._client.PostAsync("/api/user", new StringContent(jsonUser, Encoding.UTF8, "application/json"));
+            Assert.True(response.StatusCode == HttpStatusCode.Unauthorized);
+        }
+
+        [Fact]
         public async Task TestInternalServerError()
         {
             var response = await this._client.GetAsync("/api/cities?country=");
